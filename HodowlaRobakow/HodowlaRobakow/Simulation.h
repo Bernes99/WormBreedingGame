@@ -16,7 +16,12 @@ private:
 
 	//zmienne
 	sf::RenderWindow* window;
+	sf::RenderWindow* optionWindow;
 	sf::Event sfEvent;
+
+	// delta time 
+	sf::Clock dtClock;
+	float dt;
 
 
 	//inicjalizacja
@@ -51,6 +56,10 @@ public:
 	/// </summary>
 	void render();
 
+	/// <summary>
+	/// aktualizuje zmienna dt o czas jaki jest potrzebny do wygenerowania klatki
+	/// </summary>
+	void updateDt();
 
 };
 
