@@ -1,13 +1,6 @@
 #pragma once
 
-#include <iostream>
-#include <ctime>
-#include <cstdlib>
-
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
+#include "Menu.h"
 
 
 class Simulation
@@ -18,6 +11,8 @@ private:
 	sf::RenderWindow* window;
 	sf::RenderWindow* optionWindow;
 	sf::Event sfEvent;
+
+	Menu *menu;
 
 	// delta time 
 	sf::Clock dtClock;

@@ -34,7 +34,7 @@ void Simulation::run()
     while (this->window->isOpen())
     {
         this->updateDt();
-        this->updateSFMLEvents();
+        this->update();
         this->render();
     }
 }
@@ -42,6 +42,7 @@ void Simulation::run()
 void Simulation::update()
 {
     this->updateSFMLEvents();
+    this->menu->update();
 }
 
 void Simulation::render()
@@ -50,7 +51,8 @@ void Simulation::render()
     this->optionWindow->clear();
 
     //window.draw(shape);
-    
+    this->menu->render();
+
     this->window->display();
     this->optionWindow->display();
 }
