@@ -1,19 +1,41 @@
 #pragma once
-#include "Menu.h"
 
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
 
-class Button:Menu
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+
+class Button
 {
 
 private:
-	sf::RectangleShape button;
 	
-	Button();
-	~Button();
+	
+	
 
 
-	void update(const float& dt);
-	void render(sf::RenderTarget* target = nullptr);
+public:
+	sf::RectangleShape button;
+	sf::Text text;
+
+	//Button();
+	//~Button();
+
+	void upButton();
+
+	void downButton();
+
+	void setPosition(int x, int y);
+
+	void setColor(int r, int g, int b, int a);
+
+	sf::RectangleShape getButton();
 
 };
+
+
 

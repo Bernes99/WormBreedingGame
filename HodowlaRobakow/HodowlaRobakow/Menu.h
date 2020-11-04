@@ -1,28 +1,28 @@
 #pragma once
 
-#include <iostream>
-#include <ctime>
-#include <cstdlib>
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
+#include "Button.h"
 
 
 
 class Menu
 {
 private:
-	sf::RenderWindow* menuWindow;
-	std::vector<sf::Texture> textures;
+	//sf::RenderWindow* menuWindow;
+	//std::vector<sf::Texture> textures;
+
+	//Button *button1;
+	
+	void initButtons();
 
 public:
+	Button button1;
+	sf::RectangleShape aaa;
 	Menu();
 	~Menu();
 
 	void update();
-	void render();
+	void renderMenu(sf::RenderWindow* window);
 
 
 

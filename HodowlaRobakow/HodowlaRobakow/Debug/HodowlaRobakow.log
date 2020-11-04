@@ -1,2 +1,8 @@
-﻿  Menu.cpp
+﻿  Button.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(36,24): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(36,21): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  Menu.cpp
+  Simulation.cpp
+  main.cpp
+  Generowanie kodu...
   HodowlaRobakow.vcxproj -> D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\Debug\HodowlaRobakow.exe

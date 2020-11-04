@@ -5,7 +5,8 @@ void Simulation::initWindow()
 {
 	this->window = new sf::RenderWindow(sf::VideoMode(800, 600), "Symulacja Robaków");
 	this->optionWindow = new sf::RenderWindow(sf::VideoMode(200, 200), "Symulacja Robaków Opcje");
-	
+    menu = new Menu();
+
 }
 
 Simulation::Simulation()
@@ -51,8 +52,8 @@ void Simulation::render()
     this->optionWindow->clear();
 
     //window.draw(shape);
-    this->menu->render();
-
+    this->menu->renderMenu(this->window);
+    
     this->window->display();
     this->optionWindow->display();
 }
