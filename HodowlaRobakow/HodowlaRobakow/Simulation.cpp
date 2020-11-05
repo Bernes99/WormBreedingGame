@@ -52,7 +52,7 @@ void Simulation::render()
     this->optionWindow->clear();
 
     //window.draw(shape);
-    this->menu->renderMenu(this->window);
+    this->menu->renderMenu(this->optionWindow);
     
     this->window->display();
     this->optionWindow->display();
