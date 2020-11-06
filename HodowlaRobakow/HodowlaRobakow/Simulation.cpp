@@ -23,10 +23,13 @@ Simulation::~Simulation()
 
 void Simulation::updateSFMLEvents()
 {
-    while (this->window->pollEvent(this->sfEvent))
+    while (this->window->pollEvent(this->sfEvent)|| this->optionWindow->pollEvent(this->sfEvent))
     {
         if (sfEvent.type == sf::Event::Closed)
+        {
+            this->optionWindow->close();
             this->window->close();
+        }   
     }
 }
 
@@ -52,8 +55,7 @@ void Simulation::render()
     this->optionWindow->clear();
 
     //window.draw(shape);
-    this->menu->renderMenu(this->optionWindow);
-    
+    this->menu->drawMenu(this->optionWindow);
     this->window->display();
     this->optionWindow->display();
 }

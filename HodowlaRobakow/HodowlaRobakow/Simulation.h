@@ -8,18 +8,20 @@ class Simulation
 private:
 
 	//zmienne
-	sf::RenderWindow* window;
-	sf::RenderWindow* optionWindow;
-	sf::Event sfEvent;
+	sf::RenderWindow* window; //okno symulacji
+	sf::RenderWindow* optionWindow; // okno opcji 
+	sf::Event sfEvent; //fsml event
 
-	Menu *menu;
+	Menu *menu; //menu opcji
 
 	// delta time 
-	sf::Clock dtClock;
-	float dt;
+	sf::Clock dtClock; // delta time clock
+	float dt; // deltaTime
 
 
-	//inicjalizacja
+	/// <summary>
+	/// inicjalizacja obu okien
+	/// </summary>
 	void initWindow();
 
 
