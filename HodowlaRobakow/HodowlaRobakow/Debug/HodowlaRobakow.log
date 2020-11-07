@@ -1,4 +1,15 @@
-﻿  Menu.cpp
+﻿  Button.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(42,37): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(42,34): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+  Menu.cpp
 D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(27,39): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
           with
           [
@@ -19,4 +30,7 @@ D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu
           [
               T=float
           ]
+  Simulation.cpp
+  main.cpp
+  Generowanie kodu...
   HodowlaRobakow.vcxproj -> D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\Debug\HodowlaRobakow.exe
