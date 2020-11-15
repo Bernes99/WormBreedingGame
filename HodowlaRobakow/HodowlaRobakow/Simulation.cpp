@@ -3,10 +3,10 @@
 // fukncje inicjaliozujace
 void Simulation::initWindow()
 {
-	this->window = new sf::RenderWindow(sf::VideoMode(800, 600), "Symulacja Robaków");
+	this->window = new sf::RenderWindow(sf::VideoMode(1024, 768), "Symulacja Robaków");
 	this->optionWindow = new sf::RenderWindow(sf::VideoMode(200, 200), "Symulacja Robaków Opcje");
     menu = new Menu();
-
+    world = new World();
 }
 
 Simulation::Simulation()
@@ -18,12 +18,14 @@ Simulation::~Simulation()
 {
     delete this->window;
     delete this->optionWindow;
+    delete(menu);
 
 }
 
 void Simulation::updateSFMLEvents()
 {
-    while (this->window->pollEvent(this->sfEvent)|| this->optionWindow->pollEvent(this->sfEvent))
+    while (this->window->pollEvent(this->sfEvent)
+        || this->optionWindow->pollEvent(this->sfEvent))
     {
         if (sfEvent.type == sf::Event::Closed)
         {
@@ -56,6 +58,8 @@ void Simulation::render()
 
     //window.draw(shape);
     this->menu->drawMenu(this->optionWindow);
+    this->world->drawWorld(this->window);
+
     this->window->display();
     this->optionWindow->display();
 }

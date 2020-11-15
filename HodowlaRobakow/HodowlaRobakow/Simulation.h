@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Menu.h"
+#include "World.h"
 
 
 class Simulation
@@ -13,6 +14,7 @@ private:
 	sf::Event sfEvent; //fsml event
 
 	Menu *menu; //menu opcji
+	World *world;
 
 	// delta time 
 	sf::Clock dtClock; // delta time clock
