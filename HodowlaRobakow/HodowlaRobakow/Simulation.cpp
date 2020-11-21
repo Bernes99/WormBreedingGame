@@ -3,8 +3,8 @@
 // fukncje inicjaliozujace
 void Simulation::initWindow()
 {
-	this->window = new sf::RenderWindow(sf::VideoMode(1024, 768), "Symulacja Robaków");
-	this->optionWindow = new sf::RenderWindow(sf::VideoMode(200, 200), "Symulacja Robaków Opcje");
+	this->window = new sf::RenderWindow(sf::VideoMode(SIM_WINDOW_X,SIM_WINDOW_Y ), "Symulacja Robaków");
+	this->optionWindow = new sf::RenderWindow(sf::VideoMode(MENU_WINDOW_X, MENU_WINDOW_Y), "Symulacja Robaków Opcje");
     menu = new Menu();
     world = new World();
 }
@@ -49,6 +49,7 @@ void Simulation::update()
 {
     this->updateSFMLEvents();
     this->menu->update();
+    this->world->update();
 }
 
 void Simulation::render()

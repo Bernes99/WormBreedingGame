@@ -2,7 +2,10 @@
 
 #include "Menu.h"
 #include "World.h"
-
+#define SIM_WINDOW_X 1024
+#define SIM_WINDOW_Y 768
+#define MENU_WINDOW_X 200
+#define MENU_WINDOW_Y 200
 
 class Simulation
 {

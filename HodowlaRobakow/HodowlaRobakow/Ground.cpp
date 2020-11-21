@@ -17,3 +17,25 @@ sf::RectangleShape Ground::getGround()
 {
 	return ground;
 }
+
+void Ground::eatFood()
+{
+	if (food>0)
+	{
+		food--;
+	}
+	
+	if (food/maxFood < 0.25f)
+	{
+		ground.setFillColor(sf::Color::Red);
+	}
+	else if (food / maxFood < 0.50f)
+	{
+		ground.setFillColor(sf::Color(255, 127, 80));
+	}
+	else if (food / maxFood < 0.75f)
+	{
+		ground.setFillColor(sf::Color::Yellow);
+	}
+	
+}

@@ -13,13 +13,15 @@
 class Ground
 {
 	sf::RectangleShape ground;
-	int food=0;
+	float maxFood=100;
+	float food=maxFood;
 	
 
 public:
 	Ground();
 	void setPosition(int x, int y);
 	sf::RectangleShape getGround();
+	void eatFood();
 
 
 };
