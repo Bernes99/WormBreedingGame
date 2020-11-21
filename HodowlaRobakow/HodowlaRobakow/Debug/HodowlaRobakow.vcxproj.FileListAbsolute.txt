@@ -1,0 +1,2 @@
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\Debug\HodowlaRobakow.exe.lastcodeanalysissucceeded
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Debug\NativeCodeAnalysis.read.1.tlog

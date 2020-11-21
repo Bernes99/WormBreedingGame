@@ -17,28 +17,28 @@ void Worm::movment(int windowSizeX)
 	if (allowRandom)
 	{
 		xMove = 0;
-		xMove = rand() % windowSizeX;
+		xMove = rand() % windowSizeX + 1 - sprite.getTexture()->getSize().x;
 		std::cout << xMove;
 		allowRandom = false;
 	}
 
-	if (sprite.getPosition().x > windowSizeX - sprite.getTexture()->getSize().x)
+	if (checker.getPosition().x > windowSizeX - sprite.getTexture()->getSize().x)
 	{
 		std::cout << sprite.getPosition().x;
 		sprite.move(-1, 0);
 		checker.move(-1, 0);
 		//sprite.move(0, 0);
 	}
-	else if (sprite.getPosition().x < 0)
+	else if (checker.getPosition().x < 0)
 	{
 		std::cout << sprite.getPosition().x;
 		sprite.move(1, 0);
 		checker.move(1, 0);
 		//sprite.move(0, 0);
 	}
-	else if(sprite.getPosition().x != xMove)
+	else if(checker.getPosition().x != xMove)
 	{
-		if (sprite.getPosition().x < xMove)
+		if (checker.getPosition().x < xMove)
 		{
 			sprite.move(1, 0);
 			checker.move(1, 0);
@@ -80,4 +80,17 @@ sf::RectangleShape Worm::getChecker()
 {
 	return checker;
 }
+
+void Worm::reScale()
+{
+	if (eaten >= 10 && maxScale > sprite.getScale().x)
+	{
+		sprite.setScale(sprite.getScale().x+0.5f, sprite.getScale().y+ 0.5f);
+		sprite.setPosition(sprite.getPosition().x,
+						   sprite.getPosition().y - sprite.getTexture()->getSize().y/2);
+		eaten = 0;
+	}
+	
+}
+
 

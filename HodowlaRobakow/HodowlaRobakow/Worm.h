@@ -17,6 +17,7 @@ private:
 	sf::Texture texture; // tekstura robaka
 	sf::Sprite sprite; //obiekt robaka z tekstur¹
 	sf::RectangleShape checker;//obiekt porzebny do sprawdzania kolizji z pod³og¹
+	int maxScale=10;
 	
 	/// <summary>
 	/// za³adowuje teksture i tworzy sprita
@@ -26,6 +27,7 @@ private:
 	int xMove; // wylosowana pozycja x do której porusza sie robak
 
 public:
+	int eaten = 0;
 	/// <summary>
 	/// poruszanie sie robaka
 	/// </summary>
@@ -43,7 +45,11 @@ public:
 	/// </summary>
 	/// <returns>sprite robaka</returns>
 	sf::Sprite getWorm();
+
 	sf::RectangleShape getChecker();
+
+	void reScale();
+
 
 };
 

@@ -15,6 +15,7 @@ class Ground
 	sf::RectangleShape ground;
 	float maxFood=100;
 	float food=maxFood;
+	//float restoreSpeed = 1;
 	
 
 public:
@@ -22,6 +23,7 @@ public:
 	void setPosition(int x, int y);
 	sf::RectangleShape getGround();
 	void eatFood();
+	void restoreFood();
 
 
 };

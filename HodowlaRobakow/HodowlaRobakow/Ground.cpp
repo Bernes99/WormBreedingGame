@@ -37,5 +37,27 @@ void Ground::eatFood()
 	{
 		ground.setFillColor(sf::Color::Yellow);
 	}
-	
 }
+
+void Ground::restoreFood()
+{
+	if (food < maxFood)
+	{
+		food++;
+	}
+
+	if (food / maxFood >= 0.75f)
+	{
+		ground.setFillColor(sf::Color::Green);
+		
+	}
+	else if (food / maxFood >= 0.50f)
+	{
+		ground.setFillColor(sf::Color::Yellow);
+	}
+	else if (food / maxFood >= 0.25f)
+	{
+		ground.setFillColor(sf::Color(255, 127, 80));
+	}
+}
+

@@ -9,10 +9,15 @@ class World
 	Worm *worm;
 	sf::Clock timer;
 	sf::Time elapseTime;
+	sf::Clock timer2;
+	sf::Time elapseTime2;
+	float restoreFoodTime=10.0f;
 
 	void floorInit();
 
 	Ground* checker();
+
+	Worm* foodEaten();
 public:
 	World();
 	~World();
@@ -22,5 +27,7 @@ public:
 	/// </summary>
 	/// <param name="window">okno na którym jest rysowanie</param>
 	void drawWorld(sf::RenderWindow* window);
+
+	
 };
 

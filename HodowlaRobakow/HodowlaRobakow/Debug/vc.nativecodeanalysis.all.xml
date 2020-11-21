@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\</FILEPATH>
+      <FILENAME>Button.cpp</FILENAME>
+      <LINE>53</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Typ wyliczeniowy „sf::PrimitiveType” nie ma zakresu. Preferowany jest element „enum class” zamiast „enum” (enum.3).</DESCRIPTION>
+    <FUNCTION>sf::VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@sf@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\</FILEPATH>
+      <FILENAME>Ground.cpp</FILENAME>
+      <LINE>19</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Typ wyliczeniowy „sf::PrimitiveType” nie ma zakresu. Preferowany jest element „enum class” zamiast „enum” (enum.3).</DESCRIPTION>
+    <FUNCTION>sf::VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@sf@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\</FILEPATH>
+      <FILENAME>Menu.cpp</FILENAME>
+      <LINE>53</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Typ wyliczeniowy „sf::PrimitiveType” nie ma zakresu. Preferowany jest element „enum class” zamiast „enum” (enum.3).</DESCRIPTION>
+    <FUNCTION>sf::VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@sf@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\</FILEPATH>
+      <FILENAME>Worm.cpp</FILENAME>
+      <LINE>82</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>Typ wyliczeniowy „sf::PrimitiveType” nie ma zakresu. Preferowany jest element „enum class” zamiast „enum” (enum.3).</DESCRIPTION>
+    <FUNCTION>sf::VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@sf@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

@@ -23,6 +23,13 @@ Ground* World::checker()
 
 }
 
+Worm* World::foodEaten()
+{
+	worm->eaten++;
+	worm->reScale();
+	return worm;
+}
+
 World::World()
 {
 	floorInit();
@@ -48,7 +55,17 @@ void World::update()
 	if (elapseTime.asSeconds()>2.0f)
 	{
 		checker()->eatFood();
+		foodEaten();
 		timer.restart();
+	}
+	elapseTime2 = timer2.getElapsedTime();
+	if (elapseTime2.asSeconds() > restoreFoodTime)
+	{
+		for (int i = 0; i < 16; i++)
+		{
+			floor[i]->restoreFood();
+		}
+		timer2.restart();
 	}
 	
 	
