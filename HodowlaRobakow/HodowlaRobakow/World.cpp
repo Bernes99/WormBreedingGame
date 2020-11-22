@@ -10,11 +10,22 @@ void World::floorInit()
 	
 }
 
-Ground* World::checker()
+void World::wormsInit()
+{
+	for (int i = 0; i < 2; i++)
+	{
+		worms.push_back(new Worm((int)floor[3]->getGround().getPosition().x,
+						(int)floor[3]->getGround().getPosition().y - (int)floor[3]->getGround().getSize().y));
+
+	}
+
+}
+
+Ground* World::checker(int wormNumber)
 {
 	for (int i = 0; i < 16; i++)
 	{
-		if (worm->getChecker().getGlobalBounds().intersects(floor[i]->getGround().getGlobalBounds()))
+		if (worms[wormNumber]->getChecker().getGlobalBounds().intersects(floor[i]->getGround().getGlobalBounds()))
 		{
 			std::cout << "zawiera" << i;
 			return floor[i];
@@ -23,19 +34,19 @@ Ground* World::checker()
 
 }
 
-Worm* World::foodEaten()
+Worm* World::foodEaten(int wormNumber)
 {
-	worm->eaten++;
-	worm->reScale();
-	return worm;
+	worms[wormNumber]->eaten++;
+	worms[wormNumber]->reScale();
+	return worms[wormNumber];
 }
 
 World::World()
 {
 	floorInit();
+
+	wormsInit();
 	//okreslenie nowego robaka oraz przypisanie mu pozycji
-	worm = new Worm((int)floor[3]->getGround().getPosition().x,
-					(int)floor[3]->getGround().getPosition().y - (int)floor[3]->getGround().getSize().y);
 }
 
 World::~World()
@@ -43,9 +54,13 @@ World::~World()
 	for (int i = 0; i < floor.size(); i++)
 	{
 		delete(floor[i]);
-
 	}
 	floor.clear();
+	for (int i = 0; i < worms.size(); i++)
+	{
+		delete(worms[i]);
+	}
+	worms.clear();
 }
 
 
@@ -54,8 +69,11 @@ void World::update()
 	elapseTime = timer.getElapsedTime();
 	if (elapseTime.asSeconds()>2.0f)
 	{
-		checker()->eatFood();
-		foodEaten();
+		for (int i = 0; i < worms.size(); i++) //sprawdzam dla kazdego robaka podloge
+		{
+			checker(i)->eatFood();
+			foodEaten(i);
+		}
 		timer.restart();
 	}
 	elapseTime2 = timer2.getElapsedTime();
@@ -72,13 +90,16 @@ void World::update()
 }
 
 
-void World::drawWorld(sf::RenderWindow* window)
+void World::drawWorld(sf::RenderWindow* window,float dt)
 {
 	for (int i = 0; i < 16; i++)
 	{
 		window->draw(floor[i]->getGround());
 	}
-	worm->movment(window->getSize().x);
-	window->draw(worm->getWorm());
-	
+	for (int i = 0; i < 2; i++)
+	{
+		worms[i]->movment(window->getSize().x);
+		window->draw(worms[i]->getWorm());
+	}
+
 }

@@ -6,7 +6,8 @@
 class World
 {
 	std::vector <Ground*> floor;
-	Worm *worm;
+	std::vector <Worm*> worms;
+	//Worm *worm;
 	sf::Clock timer;
 	sf::Time elapseTime;
 	sf::Clock timer2;
@@ -14,19 +15,21 @@ class World
 	float restoreFoodTime=10.0f;
 
 	void floorInit();
+	void wormsInit();
 
-	Ground* checker();
+	Ground* checker(int wormNumber);
 
-	Worm* foodEaten();
+	Worm* foodEaten(int wormNumber);
 public:
 	World();
 	~World();
 	void update();
 	/// <summary>
-	/// rysowanie swiata
-	/// </summary>
-	/// <param name="window">okno na którym jest rysowanie</param>
-	void drawWorld(sf::RenderWindow* window);
+		/// rysowanie swiata
+		/// </summary>
+		/// <param name="window">okno na którym jest rysowanie</param>
+	/// <param name="dt">delta time</param>
+	void drawWorld(sf::RenderWindow* window,float dt);
 
 	
 };

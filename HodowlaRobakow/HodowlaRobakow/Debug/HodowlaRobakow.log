@@ -1,64 +1,6 @@
-﻿  Button.cpp
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(42,37): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(42,34): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-  Ground.cpp
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Ground.cpp(13,37): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Ground.cpp(13,34): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-  main.cpp
-  Menu.cpp
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(27,39): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(26,73): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(33,39): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(32,73): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-  Simulation.cpp
-  World.cpp
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(43,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  Worm.cpp
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(64,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(66,31): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(66,21): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(67,30): warning C4244: "=": konwersja z "const T" do "int", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-  Uruchamianie rozszerzenia Code Analysis dla języka C/C++...
-  Generowanie kodu...
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(24): warning C4715: "World::checker”: niewszystkie ścieżki kodu zwracają wartość
+﻿  World.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(54,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(59,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(72,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(35): warning C4715: "World::checker”: niewszystkie ścieżki kodu zwracają wartość
   HodowlaRobakow.vcxproj -> D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\Debug\HodowlaRobakow.exe
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(53): warning C26812: Typ wyliczeniowy „sf::PrimitiveType” nie ma zakresu. Preferowany jest element „enum class” zamiast „enum” (enum.3).
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Ground.cpp(19): warning C26812: Typ wyliczeniowy „sf::PrimitiveType” nie ma zakresu. Preferowany jest element „enum class” zamiast „enum” (enum.3).
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(53): warning C26812: Typ wyliczeniowy „sf::PrimitiveType” nie ma zakresu. Preferowany jest element „enum class” zamiast „enum” (enum.3).
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(82): warning C26812: Typ wyliczeniowy „sf::PrimitiveType” nie ma zakresu. Preferowany jest element „enum class” zamiast „enum” (enum.3).

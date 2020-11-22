@@ -12,6 +12,7 @@
 
 class Ground
 {
+protected:
 	sf::RectangleShape ground;
 	float maxFood=100;
 	float food=maxFood;

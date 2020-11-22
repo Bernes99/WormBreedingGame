@@ -18,6 +18,9 @@ private:
 	sf::Sprite sprite; //obiekt robaka z tekstur¹
 	sf::RectangleShape checker;//obiekt porzebny do sprawdzania kolizji z pod³og¹
 	int maxScale=10;
+
+	sf::Clock timer;
+	sf::Time elapseTime;
 	
 	/// <summary>
 	/// za³adowuje teksture i tworzy sprita
@@ -41,12 +44,13 @@ public:
 	Worm(int wormPosX,int wormPosY);
 	
 	/// <summary>
-	/// zwraca spirta robaka
+	/// zwraca sprita robaka
 	/// </summary>
 	/// <returns>sprite robaka</returns>
 	sf::Sprite getWorm();
 
 	sf::RectangleShape getChecker();
+
 
 	void reScale();
 

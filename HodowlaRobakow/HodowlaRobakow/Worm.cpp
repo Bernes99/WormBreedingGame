@@ -13,7 +13,7 @@ void Worm::loadSprite()
 
 void Worm::movment(int windowSizeX)
 {
-	
+	timer.restart();
 	if (allowRandom)
 	{
 		xMove = 0;
@@ -52,7 +52,11 @@ void Worm::movment(int windowSizeX)
 	else
 	{
 		sprite.move(0, 0);
-		Sleep(2000);
+		/*while (timer.getElapsedTime().asSeconds() < 4)
+		{
+
+		}
+		timer.restart();*/
 		allowRandom = true;
 	}
 }
@@ -85,9 +89,9 @@ void Worm::reScale()
 {
 	if (eaten >= 10 && maxScale > sprite.getScale().x)
 	{
-		sprite.setScale(sprite.getScale().x+0.5f, sprite.getScale().y+ 0.5f);
+		sprite.setScale(sprite.getScale().x+0.25f, sprite.getScale().y+ 0.25f);
 		sprite.setPosition(sprite.getPosition().x,
-						   sprite.getPosition().y - sprite.getTexture()->getSize().y/2);
+						   sprite.getPosition().y - sprite.getTexture()->getSize().y/4);
 		eaten = 0;
 	}
 	
