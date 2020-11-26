@@ -1,6 +1,2 @@
-﻿  World.cpp
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(54,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(59,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(72,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(35): warning C4715: "World::checker”: niewszystkie ścieżki kodu zwracają wartość
+﻿  Simulation.cpp
   HodowlaRobakow.vcxproj -> D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\Debug\HodowlaRobakow.exe

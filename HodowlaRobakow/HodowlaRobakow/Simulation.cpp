@@ -60,7 +60,6 @@ void Simulation::render()
     //window.draw(shape);
     this->menu->drawMenu(this->optionWindow);
     this->world->drawWorld(this->window,dt);
-
     this->window->display();
     this->optionWindow->display();
 }
