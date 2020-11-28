@@ -65,25 +65,23 @@ World::~World()
 
 
 void World::update()
-{
-	elapseTime = timer.getElapsedTime();
-	if (elapseTime.asSeconds()>2.0f)
+{	
+	if (eatTimer.getElapsedTime().asSeconds() >.2f)
 	{
 		for (int i = 0; i < worms.size(); i++) //sprawdzam dla kazdego robaka podloge
 		{
 			checker(i)->eatFood();
 			foodEaten(i);
 		}
-		timer.restart();
+		eatTimer.restart();
 	}
-	elapseTime2 = timer2.getElapsedTime();
-	if (elapseTime2.asSeconds() > restoreFoodTime)
+	if (groundTimer.getElapsedTime().asSeconds() > restoreFoodTime)
 	{
 		for (int i = 0; i < 16; i++)
 		{
 			floor[i]->restoreFood();
 		}
-		timer2.restart();
+		groundTimer.restart();
 	}
 	
 	
@@ -100,6 +98,7 @@ void World::drawWorld(sf::RenderWindow* window,float dt)
 	{
 		worms[i]->movment(window->getSize().x);
 		window->draw(worms[i]->getWorm());
+		window->draw(worms[i]->checker);
 	}
 
 }
