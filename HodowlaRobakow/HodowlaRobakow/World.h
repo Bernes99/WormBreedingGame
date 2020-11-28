@@ -41,6 +41,7 @@ public:
 	/// aktualizuje stan swiata
 	/// </summary>
 	void update();
+
 	/// <summary>
 	/// rysowanie swiata
 	/// </summary>

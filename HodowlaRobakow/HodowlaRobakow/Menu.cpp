@@ -41,7 +41,7 @@ Menu::Menu()
 
 void Menu::update()
 {
-	std::cout << "siemanko";
+	//std::cout << "siemanko";
 }
 
 void Menu::drawMenu(sf::RenderWindow* window)

@@ -27,7 +27,7 @@ Ground* World::checker(int wormNumber)
 	{
 		if (worms[wormNumber]->getChecker().getGlobalBounds().intersects(floor[i]->getGround().getGlobalBounds()))
 		{
-			std::cout << "zawiera" << i;
+			std::cout <<"Robak o numerze "<<wormNumber<< " zawiera " << i<<std::endl;
 			return floor[i];
 		}
 	}
@@ -46,6 +46,8 @@ World::World()
 	floorInit();
 
 	wormsInit();
+
+	//std::cout << ;
 	//okreslenie nowego robaka oraz przypisanie mu pozycji
 }
 
@@ -72,19 +74,25 @@ void World::update()
 		{
 			checker(i)->eatFood();
 			foodEaten(i);
+			if (worms[i]->wormDeath())
+			{
+				delete(worms[i]);
+				worms.erase(worms.begin() + i);
+				//worms.resize(worms.size() - 1);
+			}
 		}
 		eatTimer.restart();
 	}
 	if (groundTimer.getElapsedTime().asSeconds() > restoreFoodTime)
 	{
-		for (int i = 0; i < 16; i++)
+		for (int i = 0; i < floor.size(); i++)
 		{
 			floor[i]->restoreFood();
 		}
 		groundTimer.restart();
 	}
 	
-	
+
 }
 
 
@@ -94,11 +102,11 @@ void World::drawWorld(sf::RenderWindow* window,float dt)
 	{
 		window->draw(floor[i]->getGround());
 	}
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < worms.size(); i++)
 	{
-		worms[i]->movment(window->getSize().x);
+		worms[i]->movment(window->getSize().x,dt);
 		window->draw(worms[i]->getWorm());
-		window->draw(worms[i]->checker);
+		
 	}
 
 }

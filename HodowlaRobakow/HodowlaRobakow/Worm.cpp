@@ -11,15 +11,20 @@ void Worm::loadSprite()
 
 }
 
-void Worm::movment(int windowSizeX)
+void Worm::movment(int windowSizeX,float dt)
 {
 	
 	if (allowMove)
 	{
 		if (allowRandom)
 		{
+			prev = xMove;
 			xMove = 0;
 			xMove = rand() % windowSizeX  - sprite.getTexture()->getSize().x/2;
+			while (prev == xMove)
+			{
+				xMove = rand() % windowSizeX - sprite.getTexture()->getSize().x / 2;
+			}
 			std::cout << xMove;
 			allowRandom = false;
 		}
@@ -38,18 +43,19 @@ void Worm::movment(int windowSizeX)
 			checker.move(2, 0);
 			//sprite.move(0, 0);
 		}
-		else if (checker.getPosition().x != xMove)
+		else if (checker.getPosition().x > xMove+0.5f || checker.getPosition().x < xMove - 0.5f)
 		{
 			if (checker.getPosition().x < xMove)
 			{
-				sprite.move(1, 0);
-				checker.move(1, 0);
+				sprite.move(100.f * dt, 0);
+				checker.move(100.f * dt, 0);
 			}
 			else
 			{
-				sprite.move(-1, 0);
-				checker.move(-1, 0);
+				sprite.move(-100.f * dt, 0);
+				checker.move(-100.f * dt, 0);
 			}
+			//std::cout << dt << std::endl;
 		}
 		else
 		{
@@ -60,7 +66,7 @@ void Worm::movment(int windowSizeX)
 			allowRandom = true;
 		}
 	}
-	else if (timer.getElapsedTime().asSeconds() > 2)
+	else if (timer.getElapsedTime().asSeconds() > howLongStay)
 	{
 		allowMove = true;
 	}
@@ -82,7 +88,7 @@ Worm::Worm(int wormPosX, int wormPosY)
 						sprite.getPosition().y + sprite.getTexture()->getSize().y);
 	
 	timer.restart();
-	checker.setFillColor(sf::Color::Blue);
+	//checker.setFillColor(sf::Color::Blue);
 }
 
 sf::Sprite Worm::getWorm()
@@ -114,6 +120,19 @@ void Worm::reScale()
 void Worm::setMaxScale(int maxScale)
 {
 	this->maxScale = maxScale;
+}
+
+bool Worm::wormDeath()
+{
+	if (deathTime.getElapsedTime().asSeconds() >=maxLifeTime)
+	{
+		return true;
+	}
+	else if(deathTime.getElapsedTime().asSeconds() > maxLifeTime*0.75f)
+	{
+		sprite.setColor(sf::Color::Red);
+	}
+	return false;
 }
 
 

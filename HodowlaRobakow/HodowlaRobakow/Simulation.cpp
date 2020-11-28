@@ -68,6 +68,6 @@ void Simulation::updateDt()
 {
     this->dt = this->dtClock.restart().asSeconds();
 
-    system("cls");
-    std::cout << this->dt << std::endl;
+    //system("cls");
+    //std::cout << this->dt << std::endl;
 }
