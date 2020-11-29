@@ -11,6 +11,12 @@ void Worm::loadSprite()
 
 }
 
+void Worm::checkerFixPosition()
+{
+	checker.setPosition(sprite.getPosition().x + sprite.getScale().x * sprite.getTexture()->getSize().x / 2,
+		checker.getPosition().y);
+}
+
 void Worm::movment(int windowSizeX,float dt)
 {
 	
@@ -25,9 +31,39 @@ void Worm::movment(int windowSizeX,float dt)
 			{
 				xMove = rand() % windowSizeX - sprite.getTexture()->getSize().x / 2;
 			}
+
 			std::cout << xMove;
+
 			allowRandom = false;
+			/* obs³uga zmiany kierunku robaka*/
+			if (checker.getPosition().x < xMove)
+			{
+				int x= sprite.getPosition().x;
+				sprite.setScale(-abs(sprite.getScale().x), sprite.getScale().y);
+				if (!isPrevRight)
+				{
+					sprite.setPosition(x + abs(sprite.getScale().x)*sprite.getTexture()->getSize().x,
+						sprite.getPosition().y);
+					
+				}
+				//checkerFixPosition();
+				isPrevRight = true;
+			}
+			else
+			{
+				int x = sprite.getPosition().x;
+				sprite.setScale(abs(sprite.getScale().x), sprite.getScale().y);
+				if (isPrevRight)
+				{
+					sprite.setPosition(x - abs(sprite.getScale().x) * sprite.getTexture()->getSize().x,
+						sprite.getPosition().y);
+					
+				}
+				//checkerFixPosition();
+				isPrevRight = false;
+			}
 		}
+		
 
 		if (checker.getPosition().x > windowSizeX - sprite.getTexture()->getSize().x)
 		{
@@ -47,6 +83,7 @@ void Worm::movment(int windowSizeX,float dt)
 		{
 			if (checker.getPosition().x < xMove)
 			{
+				
 				sprite.move(100.f * dt, 0);
 				checker.move(100.f * dt, 0);
 			}
@@ -61,9 +98,9 @@ void Worm::movment(int windowSizeX,float dt)
 		{
 			sprite.move(0, 0);
 			allowMove = false;
-			timer.restart();
-			
+			timer.restart();	
 			allowRandom = true;
+			
 		}
 	}
 	else if (timer.getElapsedTime().asSeconds() > howLongStay)
@@ -81,14 +118,17 @@ Worm::Worm(int wormPosX, int wormPosY)
 	srand(time(NULL));
 	allowRandom = true;
 	sprite.setPosition(wormPosX, wormPosY);
+	
+
 	xMove = sprite.getPosition().x;
 
 	checker.setSize(sf::Vector2f(1,1));
-	checker.setPosition(sprite.getPosition().x + sprite.getTexture()->getSize().x/2,
+	checker.setPosition(sprite.getPosition().x - sprite.getTexture()->getSize().x / 2,
 						sprite.getPosition().y + sprite.getTexture()->getSize().y);
 	
 	timer.restart();
-	//checker.setFillColor(sf::Color::Blue);
+	
+	checker.setFillColor(sf::Color::Blue);
 }
 
 sf::Sprite Worm::getWorm()
@@ -103,18 +143,34 @@ sf::RectangleShape Worm::getChecker()
 
 void Worm::reScale()
 {
-	if (eaten >= 10 && maxScale > sprite.getScale().x)
+	if (sprite.getScale().x>0)
 	{
-		sprite.setScale(sprite.getScale().x+0.25f, sprite.getScale().y+ 0.25f);
-		sprite.setPosition(sprite.getPosition().x,
-						   sprite.getPosition().y - sprite.getTexture()->getSize().y/4);
-		
-		checker.setPosition(sprite.getPosition().x + sprite.getScale().x *sprite.getTexture()->getSize().x / 2,
-			checker.getPosition().y);
+		if (eaten >= 10 && maxScale > abs(sprite.getScale().x))
+		{
+			sprite.setScale(sprite.getScale().x + 0.25f, sprite.getScale().y + 0.25f);
+			sprite.setPosition(sprite.getPosition().x,
+				sprite.getPosition().y - sprite.getTexture()->getSize().y / 4);
 
-		eaten = 0;
+			checkerFixPosition();
+
+			eaten = 0;
+		}
+	}
+	else // gdzy robak bedzie w lewo trzeba skalowanie robic dla ujemnych
+	{
+		if (eaten >= 10 && maxScale > abs(sprite.getScale().x))
+		{
+			sprite.setScale(sprite.getScale().x - 0.25f, sprite.getScale().y + 0.25f);
+			sprite.setPosition(sprite.getPosition().x,
+				sprite.getPosition().y - sprite.getTexture()->getSize().y / 4);
+
+			checkerFixPosition();
+
+			eaten = 0;
+		}
 	}
 	
+
 }
 
 void Worm::setMaxScale(int maxScale)

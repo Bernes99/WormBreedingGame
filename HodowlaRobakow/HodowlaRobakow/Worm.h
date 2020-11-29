@@ -14,7 +14,7 @@ class Worm
 private:
 	sf::Texture texture; // tekstura robaka
 	sf::Sprite sprite; //obiekt robaka z tekstur¹
-	sf::RectangleShape checker;//obiekt porzebny do sprawdzania kolizji z pod³og¹
+	//sf::RectangleShape checker;//obiekt porzebny do sprawdzania kolizji z pod³og¹
 	
 	int maxScale=10; // maksymalny rozmiar jaki moze urosn¹æ robak
 	
@@ -25,6 +25,7 @@ private:
 	float maxLifeTime = 120.f; //maxymalny czas zycia
 	
 	bool allowMove = true; // czy robak moze sie poruszaæ
+	bool isPrevRight; ///czy robak poprzednio porusza³ sie w prawo
 	//sf::Time elapseTime;
 	
 	bool allowRandom = false; //czy pozwolic na losowanie pozycji
@@ -36,9 +37,10 @@ private:
 	/// </summary>
 	void loadSprite();
 
+	void checkerFixPosition();
 public:
 	int eaten = 0; // zjedzone jedzienie do nastepnego wzrostu
-	
+	sf::RectangleShape checker;
 	/// <summary>
 	/// poruszanie sie robaka
 	/// </summary>
@@ -83,5 +85,7 @@ public:
 	/// </summary>
 	/// <returns> zwraca prawde jezeli robak przekroczy³ max d³ugoœæ zycia</returns>
 	bool wormDeath();
+
+	///void 
 };
 

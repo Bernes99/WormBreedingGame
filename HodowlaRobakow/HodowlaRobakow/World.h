@@ -13,7 +13,7 @@ class World
 
 	sf::Clock groundTimer; /// zegar odpowiedzialny za odnawianie sie jedzneia na powierzchni
 
-	float restoreFoodTime=10.0f;
+	float restoreFoodTime=10.0f; /// szybkosc odnawiania sie podloza
 
 	void floorInit();
 	void wormsInit();

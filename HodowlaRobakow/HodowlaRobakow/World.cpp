@@ -74,7 +74,7 @@ void World::update()
 		{
 			checker(i)->eatFood();
 			foodEaten(i);
-			if (worms[i]->wormDeath())
+			if (worms[i]->wormDeath()) // sprawdzam czy robak osi¹gn¹ max wiek
 			{
 				delete(worms[i]);
 				worms.erase(worms.begin() + i);
@@ -106,6 +106,7 @@ void World::drawWorld(sf::RenderWindow* window,float dt)
 	{
 		worms[i]->movment(window->getSize().x,dt);
 		window->draw(worms[i]->getWorm());
+		window->draw(worms[i]->checker);
 		
 	}
 
