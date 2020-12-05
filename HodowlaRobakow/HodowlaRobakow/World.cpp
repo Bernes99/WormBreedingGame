@@ -23,7 +23,7 @@ void World::wormsInit()
 	for (int i = 0; i < 5; i++)
 	{
 		worms.push_back(new Worm((int)floor[0][0]->getGround().getPosition().x,
-						(int)floor[0][0]->getGround().getPosition().y - (int)floor[0][0]->getGround().getSize().y));
+						(int)floor[0][0]->getGround().getPosition().y - (int)floor[0][0]->getGround().getSize().y, &eggs));
 
 	}
 
@@ -106,11 +106,17 @@ void World::update()
 					is2Worms = true;
 				}
 			}
-			if (worms[i]->eaten > 7 && worms[i]->isMature() && is2Worms && leyEggTimer.getElapsedTime().asSeconds() > 30)
+			if (worms[i]->eaten > 7 && worms[i]->isMature() && is2Worms && leyEggTimer.getElapsedTime().asSeconds() > leyEggSpan)
 			{
-				layEggs(i,countNewWorms);
-				
+				worms[i]->layEggs(i, countNewWorms);
+				leyEggTimer.restart();
 			}
+			if (hungerTimer.getElapsedTime().asSeconds() > hungerSpan)
+			{
+				worms[i]->eaten = worms[i]->eaten--;
+			}
+
+
 			if (worms[i]->wormDeath()) // sprawdzam czy robak osi¹gn¹ max wiek
 			{
 				delete worms[i] ;
@@ -124,8 +130,8 @@ void World::update()
 		{
 			if (eggs[i]->wormDeath()) // sprawdzam czy jajka osi¹gn¹ max wiek
 			{
-				worms.push_back(new Worm(eggs[i]->getWorm().getPosition().x,
-					eggs[i]->getWorm().getPosition().y));
+				worms.push_back(new Worm(eggs[i]->getCreature()->getPosition().x,
+					eggs[i]->getCreature()->getPosition().y, &eggs));
 				delete eggs[i];
 				eggs.erase(eggs.begin() + i);
 
@@ -164,27 +170,15 @@ void World::drawWorld(sf::RenderWindow* window,float dt)
 		worms[i]->movment(xWorldSize*floor[0][0]->getGround().getSize().x,
 			yWorldSize * floor[0][0]->getGround().getSize().y,
 			dt);
-		window->draw(worms[i]->getWorm());
+		window->draw(*worms[i]->getCreature());
 		window->draw(worms[i]->checker);
 		
 	}
 	for (int i = 0; i < eggs.size(); i++)
 	{
-		window->draw(eggs[i]->getWorm());
+		window->draw(*eggs[i]->getCreature());
 	}
 
 }
 
-void World::layEggs(int i, int count)
-{
-	for (int j = 0; j < count; j++)
-	{
-		eggs.push_back(new Eggs(worms[i]->getWorm().getPosition().x,
-			worms[i]->getWorm().getPosition().y,
-			10.f));
-	}
-	worms[i]->eaten = worms[i]->eaten - 5;
-	leyEggTimer.restart();
-	std::cout << "mamy jajo \n";
-	
-}
+

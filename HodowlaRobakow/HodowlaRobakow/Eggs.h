@@ -1,13 +1,13 @@
 #pragma once
-#include "Worm.h"
+#include "Creature.h"
 class Eggs :
-    public Worm
+    public Creature
 {
 
 public:
     Eggs(int positionX,int positionY,float lifeTime);
     void setEggDeath(float time);
 
-    bool wormDeath() override;
+    bool wormDeath() ;
 };
 

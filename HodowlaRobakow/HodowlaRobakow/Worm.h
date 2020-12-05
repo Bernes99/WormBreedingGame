@@ -1,20 +1,14 @@
 #pragma once
 
-#include <iostream>
 
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
+#include "Creature.h"
+#include "Eggs.h"
 
 
-
-class Worm
+class Worm : public Creature
 {
 private:
-	sf::Texture texture; // tekstura robaka
-	sf::Sprite sprite; //obiekt robaka z tekstur¹
 	//sf::RectangleShape checker;//obiekt porzebny do sprawdzania kolizji z pod³og¹
 	
 	int maxScale=2; // maksymalny rozmiar jaki moze urosn¹æ robak
@@ -34,22 +28,18 @@ private:
 
 	float speed = 100.f;/// predkosc poruszania sie robaka
 
+	bool hungerDie = false; //czy robak przymiera g³odem
+	sf::Clock hungerTimer; //czas jaki robak przymiera glodem
+	float maxHungerTime = 3; // maksymalny czas na g³odzie 
+
+	std::vector <Eggs*>* eggs; ///wskaŸnik do przekazywania vektora jajek
+
 protected:
-	sf::Clock deathTime;// zegar odlczajacy do œmeirci robaka
-	float maxLifeTime = 120.f; //maxymalny czas zycia
-
-	/// <summary>
-	/// za³adowuje teksture i tworzy sprita
-	/// </summary>
-	/// <param name="path"> - scie¿ka do tekstury</param>
-	void loadSprite(std::string path);
-
+	
 	void checkerFixPosition();
-
-	void setWormPosition(int positionX, int positionY);
+	
 public:
-	int eaten = 3; // zjedzone jedzienie do nastepnego wzrostu
-	sf::RectangleShape checker; //punkt odniesienie dla robaka
+	
 	/// <summary>
 	/// poruszanie sie robaka
 	/// </summary>
@@ -64,20 +54,11 @@ public:
 	/// </summary>
 	/// <param name="wormPosX">startowa pozycja x robaka</param>
 	/// <param name="wormPosY">startowa pozycja y robaka</param>
-	Worm(int wormPosX,int wormPosY);
+	Worm(int wormPosX,int wormPosY, std::vector <Eggs*>* egg);
 
-	/// <summary>
-	/// zwraca sprita robaka
-	/// </summary>
-	/// <returns>sprite robaka</returns>
-	sf::Sprite getWorm();
+	
 
-	/// <summary>
-	/// zwraca checkera cztyli specjalny obiekt stworzony 
-	/// pod robakiem do sprawdzzaania kolizji z podlog¹
-	/// </summary>
-	/// <returns> zwraca obiekt prostok¹ta 1 na 1 przeznaczony do sprawdzania</returns>
-	sf::RectangleShape getChecker();
+	
 
 	/// <summary>
 	/// sprawdza czy robak zjad³ dostatecznie duzo jedzenia
@@ -96,9 +77,11 @@ public:
 	/// jezeli zosta³o robakowi malo czasu zmienia jego kolor
 	/// </summary>
 	/// <returns> zwraca prawde jezeli robak przekroczy³ max d³ugoœæ zycia</returns>
-	virtual bool wormDeath();
+	bool wormDeath();
 
 	
 	bool isMature();
+
+	void layEggs(int i, int count);
 };
 

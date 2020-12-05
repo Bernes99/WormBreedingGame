@@ -1,28 +1,9 @@
 #include "Worm.h"
 
-void Worm::loadSprite(std::string path)
-{
-	if (!texture.loadFromFile(path))
-	{
-		std::cout << "blad zaladowaia tekstury robaka";
-		system("pause");
-	}
-	sprite.setTexture(texture);
-
-}
-
 void Worm::checkerFixPosition()
 {
 	checker.setPosition(sprite.getPosition().x + sprite.getScale().x * sprite.getTexture()->getSize().x / 2,
 		checker.getPosition().y);
-}
-
-void Worm::setWormPosition(int positionX, int positionY)
-{
-	sprite.setPosition(positionX, positionY);
-	checker.setPosition(sprite.getPosition().x - sprite.getTexture()->getSize().x / 2,
-		sprite.getPosition().y + 4 * sprite.getTexture()->getSize().y / 5);
-
 }
 
 void Worm::movment(int worldSizeX, int worldSizeY,float dt)
@@ -166,8 +147,10 @@ void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 	
 }
 
-Worm::Worm(int wormPosX, int wormPosY)
+Worm::Worm(int wormPosX, int wormPosY, std::vector <Eggs*>* egg)
 {
+
+	this->eggs = egg;
 
 	loadSprite("../Resources/Textures/worm.png");
 
@@ -188,15 +171,8 @@ Worm::Worm(int wormPosX, int wormPosY)
 	checker.setFillColor(sf::Color::Blue);
 }
 
-sf::Sprite Worm::getWorm()
-{
-	return sprite;
-}
 
-sf::RectangleShape Worm::getChecker()
-{
-	return checker;
-}
+
 
 void Worm::reScale()
 {
@@ -237,13 +213,30 @@ void Worm::setMaxScale(int maxScale)
 
 bool Worm::wormDeath()
 {
+	
 	if (deathTime.getElapsedTime().asSeconds() >=maxLifeTime)
 	{
 		return true;
 	}
 	else if(deathTime.getElapsedTime().asSeconds() > maxLifeTime*0.90f)
 	{
-		sprite.setColor(sf::Color::Red);
+		sprite.setColor(sf::Color(255,0,0));
+	}
+	if (eaten <= 0 && !hungerDie)
+	{
+		hungerDie = true;
+		sprite.setColor(sf::Color(255, 0, 0));
+		hungerTimer.restart();
+
+	}
+	else if (eaten >= 0)
+	{
+		hungerDie = false;
+		sprite.setColor(sf::Color(255, 255, 255));
+	}
+	if (hungerDie && hungerTimer.getElapsedTime().asSeconds()>=maxHungerTime)
+	{
+		return true;
 	}
 	return false;
 }
@@ -258,5 +251,17 @@ bool Worm::isMature()
 }
 
 
+void Worm::layEggs(int i, int count)
+{
+	for (int j = 0; j < count; j++)
+	{
+		eggs->push_back(new Eggs(this->checker.getPosition().x,
+			this->checker.getPosition().y,
+			10.f));
+	}
+	this->eaten = this->eaten - 5;
+	
+	std::cout << "mamy jajo \n";
 
+}
 

@@ -1,6 +1,8 @@
 #pragma once
 #include "Ground.h"
 #include <vector>
+
+#include "Worm.h"
 #include "Eggs.h"
 
 class World
@@ -14,8 +16,11 @@ class World
 
 	sf::Clock groundTimer; /// zegar odpowiedzialny za odnawianie sie jedzneia na powierzchni
 	
+	sf::Clock hungerTimer; /// zegar odpowiedzialny za czas skladania jaja
+	float hungerSpan = 3;
+
 	sf::Clock leyEggTimer; /// zegar odpowiedzialny za czas skladania jaja
-	float leyEggSpan =30;
+	float leyEggSpan =3; /// odstep pomiêdzy mozliwoscia kolejnego jajka
 
 	float restoreFoodTime=10.0f; /// szybkosc odnawiania sie podloza
 
@@ -40,7 +45,7 @@ class World
 	/// <returns>zwraca wskaŸnik na obiekt robaka</returns>
 	Worm* foodEaten(int wormNumber);
 protected:
-	int countNewWorms=2;
+	int countNewWorms = 2; /// ilosc robaków z 1 jajka 
 public:
 	World(int x,int y);
 	~World();
@@ -58,6 +63,6 @@ public:
 	/// <param name="dt">delta time</param>
 	void drawWorld(sf::RenderWindow* window,float dt);
 
-	void layEggs(int i, int count);
+	
 };
 
