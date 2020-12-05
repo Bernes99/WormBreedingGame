@@ -9,6 +9,7 @@
 #include <SFML/Window.hpp>
 
 
+
 class Worm
 {
 private:
@@ -16,36 +17,47 @@ private:
 	sf::Sprite sprite; //obiekt robaka z tekstur¹
 	//sf::RectangleShape checker;//obiekt porzebny do sprawdzania kolizji z pod³og¹
 	
-	int maxScale=10; // maksymalny rozmiar jaki moze urosn¹æ robak
+	int maxScale=2; // maksymalny rozmiar jaki moze urosn¹æ robak
 	
 	sf::Clock timer; // zegar odpowiedzialny za zatrzymywanie sie robaków w miejscu
 	float howLongStay = 2.0f; // jak d³ugo robak stoi w miejscu
 
-	sf::Clock deathTime;// zegar odlczajacy do œmeirci robaka
-	float maxLifeTime = 120.f; //maxymalny czas zycia
-	
 	bool allowMove = true; // czy robak moze sie poruszaæ
 	bool isPrevRight; ///czy robak poprzednio porusza³ sie w prawo
 	//sf::Time elapseTime;
 	
 	bool allowRandom = false; //czy pozwolic na losowanie pozycji
 	float xMove; // wylosowana pozycja x do której porusza sie robak
-	float prev=0; // poprzedna wylosowana pozycja
+	float prevX=0; // poprzedna wylosowana pozycja x
+	float yMove; // wylosowana pozycja y do której porusza sie robak
+	float prevY = 0;// poprzedna wylosowana pozycja y
+
+	float speed = 100.f;/// predkosc poruszania sie robaka
+
+protected:
+	sf::Clock deathTime;// zegar odlczajacy do œmeirci robaka
+	float maxLifeTime = 120.f; //maxymalny czas zycia
 
 	/// <summary>
 	/// za³adowuje teksture i tworzy sprita
 	/// </summary>
-	void loadSprite();
+	/// <param name="path"> - scie¿ka do tekstury</param>
+	void loadSprite(std::string path);
 
 	void checkerFixPosition();
+
+	void setWormPosition(int positionX, int positionY);
 public:
-	int eaten = 0; // zjedzone jedzienie do nastepnego wzrostu
-	sf::RectangleShape checker;
+	int eaten = 3; // zjedzone jedzienie do nastepnego wzrostu
+	sf::RectangleShape checker; //punkt odniesienie dla robaka
 	/// <summary>
 	/// poruszanie sie robaka
 	/// </summary>
 	/// <param name="windowSizeX">okno w którym porusza sie robak(takie samo jak rysowanie)</param>
-	void movment(int windowSizeX,float dt);
+	void movment(int worldSizeX,int worldSizeY,float dt);
+	
+	
+	Worm() = default;
 
 	/// <summary>
 	/// konstruktor robaka
@@ -53,7 +65,7 @@ public:
 	/// <param name="wormPosX">startowa pozycja x robaka</param>
 	/// <param name="wormPosY">startowa pozycja y robaka</param>
 	Worm(int wormPosX,int wormPosY);
-	
+
 	/// <summary>
 	/// zwraca sprita robaka
 	/// </summary>
@@ -84,8 +96,9 @@ public:
 	/// jezeli zosta³o robakowi malo czasu zmienia jego kolor
 	/// </summary>
 	/// <returns> zwraca prawde jezeli robak przekroczy³ max d³ugoœæ zycia</returns>
-	bool wormDeath();
+	virtual bool wormDeath();
 
-	///void 
+	
+	bool isMature();
 };
 

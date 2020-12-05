@@ -1,8 +1,8 @@
 #include "Worm.h"
 
-void Worm::loadSprite()
+void Worm::loadSprite(std::string path)
 {
-	if (!texture.loadFromFile("../Resources/Textures/worm.png"))
+	if (!texture.loadFromFile(path))
 	{
 		std::cout << "blad zaladowaia tekstury robaka";
 		system("pause");
@@ -17,22 +17,39 @@ void Worm::checkerFixPosition()
 		checker.getPosition().y);
 }
 
-void Worm::movment(int windowSizeX,float dt)
+void Worm::setWormPosition(int positionX, int positionY)
+{
+	sprite.setPosition(positionX, positionY);
+	checker.setPosition(sprite.getPosition().x - sprite.getTexture()->getSize().x / 2,
+		sprite.getPosition().y + 4 * sprite.getTexture()->getSize().y / 5);
+
+}
+
+void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 {
 	
 	if (allowMove)
 	{
+		/*Losowanie kierunku poruszania sie robaka i zmiana kierunku chodzenia */
 		if (allowRandom)
 		{
-			prev = xMove;
+			prevX = xMove;
+			prevY = yMove;
 			xMove = 0;
-			xMove = rand() % windowSizeX  - sprite.getTexture()->getSize().x/2;
-			while (prev == xMove)
+			yMove = 0;
+
+			xMove = rand() % (worldSizeX  - sprite.getTexture()->getSize().x/2 );
+			while (prevX == xMove)
 			{
-				xMove = rand() % windowSizeX - sprite.getTexture()->getSize().x / 2;
+				xMove = rand() % (worldSizeX  - sprite.getTexture()->getSize().x / 2  );
 			}
 
-			std::cout << xMove;
+			yMove = rand() % (worldSizeY  );
+			while (prevY == yMove)
+			{
+				yMove = rand() % (worldSizeY   );
+			}
+			//std::cout << yMove;
 
 			allowRandom = false;
 			/* obs³uga zmiany kierunku robaka*/
@@ -62,38 +79,77 @@ void Worm::movment(int windowSizeX,float dt)
 				//checkerFixPosition();
 				isPrevRight = false;
 			}
+			//std::cout << yMove << "aaaaaa" << xMove;
 		}
-		
 
-		if (checker.getPosition().x > windowSizeX - sprite.getTexture()->getSize().x)
+		/*zabezpieczenie wyjscia poza plansze z prawej*/
+		if (checker.getPosition().x > worldSizeX )
 		{
-			std::cout << sprite.getPosition().x;
+			//std::cout << sprite.getPosition().x;
 			sprite.move(-2, 0);
 			checker.move(-2, 0);
+			allowRandom = true;
 			//sprite.move(0, 0);
 		}
+
+		/*zabezpieczenie wyjscia poza plansze z dolu*/
+		else if (checker.getPosition().y > worldSizeY )
+		{
+			//std::cout << sprite.getPosition().x;
+			sprite.move(0, -2);
+			checker.move(0, -2);
+			allowRandom = true;
+			//sprite.move(0, 0);
+		}
+
+		/*zabezpieczenie wyjscia poza plansze z gory*/
+		else if (checker.getPosition().y <0)
+		{
+			//std::cout << sprite.getPosition().x;
+			sprite.move(0, 2);
+			checker.move(0, 2);
+			allowRandom = true;
+			//sprite.move(0, 0);
+		}
+		
+		/*zabezpieczenie wyjscia poza plansze z lewej*/
 		else if (checker.getPosition().x < 0)
 		{
 			std::cout << sprite.getPosition().x;
 			sprite.move(2, 0);
 			checker.move(2, 0);
+			allowRandom = true;
 			//sprite.move(0, 0);
 		}
-		else if (checker.getPosition().x > xMove+0.5f || checker.getPosition().x < xMove - 0.5f)
+		
+		/*gdy robak jest poza zakresem wylosowanego x i y z dopuszczalnym b³êdem*/
+		else if (checker.getPosition().x > xMove+0.5f || checker.getPosition().x < xMove - 0.5f||
+			checker.getPosition().y > yMove + 0.5f || checker.getPosition().y < yMove - 0.5f)
 		{
 			if (checker.getPosition().x < xMove)
 			{
-				
-				sprite.move(100.f * dt, 0);
-				checker.move(100.f * dt, 0);
+				sprite.move(speed * dt, 0);
+				checker.move(speed * dt, 0);
 			}
 			else
 			{
-				sprite.move(-100.f * dt, 0);
-				checker.move(-100.f * dt, 0);
+				sprite.move(-speed * dt, 0);
+				checker.move(-speed * dt, 0);
 			}
+			if (checker.getPosition().y < yMove)
+			{
+				sprite.move(0,speed * dt);
+				checker.move(0, speed * dt);
+			}
+			else
+			{
+				sprite.move(0, -speed * dt);
+				checker.move(0, -speed * dt);
+			}
+			
 			//std::cout << dt << std::endl;
 		}
+		/* gdy robak jest juz w przedziale to sie zatrzymuje*/
 		else
 		{
 			sprite.move(0, 0);
@@ -113,7 +169,7 @@ void Worm::movment(int windowSizeX,float dt)
 Worm::Worm(int wormPosX, int wormPosY)
 {
 
-	loadSprite();
+	loadSprite("../Resources/Textures/worm.png");
 
 	srand(time(NULL));
 	allowRandom = true;
@@ -121,10 +177,11 @@ Worm::Worm(int wormPosX, int wormPosY)
 	
 
 	xMove = sprite.getPosition().x;
+	yMove = sprite.getPosition().y;
 
 	checker.setSize(sf::Vector2f(1,1));
 	checker.setPosition(sprite.getPosition().x - sprite.getTexture()->getSize().x / 2,
-						sprite.getPosition().y + sprite.getTexture()->getSize().y);
+						sprite.getPosition().y + 4*sprite.getTexture()->getSize().y/5);
 	
 	timer.restart();
 	
@@ -184,11 +241,22 @@ bool Worm::wormDeath()
 	{
 		return true;
 	}
-	else if(deathTime.getElapsedTime().asSeconds() > maxLifeTime*0.75f)
+	else if(deathTime.getElapsedTime().asSeconds() > maxLifeTime*0.90f)
 	{
 		sprite.setColor(sf::Color::Red);
 	}
 	return false;
 }
+
+bool Worm::isMature()
+{
+	if (deathTime.getElapsedTime().asSeconds() >= maxLifeTime * 0.1f)
+	{
+		return true;
+	}
+	return false;
+}
+
+
 
 

@@ -6,7 +6,7 @@ void Simulation::initWindow()
 	this->window = new sf::RenderWindow(sf::VideoMode(SIM_WINDOW_X,SIM_WINDOW_Y ), "Symulacja Robaków");
 	this->optionWindow = new sf::RenderWindow(sf::VideoMode(MENU_WINDOW_X, MENU_WINDOW_Y), "Symulacja Robaków Opcje");
     menu = new Menu();
-    world = new World();
+    world = new World(4,4);
 }
 
 Simulation::Simulation()

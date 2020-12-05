@@ -2,20 +2,28 @@
 
 void World::floorInit()
 {
-	for (int i = 0; i < 16; i++)
+	for (int i = 0; i < yWorldSize; i++)
 	{
-		floor.push_back(new Ground());
-		floor[i]->setPosition(i*64,400);
+		std::vector<Ground*> horizontalFloor;
+
+		for (int j = 0; j < xWorldSize; j++)
+		{
+			horizontalFloor.push_back(new Ground());
+			horizontalFloor[j]->setPosition(j * horizontalFloor[j]->getGround().getSize().x,
+										i* horizontalFloor[j]->getGround().getSize().y);
+		}
+		floor.push_back(horizontalFloor);
+		horizontalFloor.clear();
 	}
 	
 }
 
 void World::wormsInit()
 {
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		worms.push_back(new Worm((int)floor[3]->getGround().getPosition().x,
-						(int)floor[3]->getGround().getPosition().y - (int)floor[3]->getGround().getSize().y));
+		worms.push_back(new Worm((int)floor[0][0]->getGround().getPosition().x,
+						(int)floor[0][0]->getGround().getPosition().y - (int)floor[0][0]->getGround().getSize().y));
 
 	}
 
@@ -23,12 +31,16 @@ void World::wormsInit()
 
 Ground* World::checker(int wormNumber)
 {
-	for (int i = 0; i < 16; i++)
+	for (int i = 0; i < yWorldSize; i++)
 	{
-		if (worms[wormNumber]->getChecker().getGlobalBounds().intersects(floor[i]->getGround().getGlobalBounds()))
+		for (int j = 0; j < xWorldSize; j++)
 		{
-			std::cout <<"Robak o numerze "<<wormNumber<< " zawiera " << i<<std::endl;
-			return floor[i];
+			if (worms[wormNumber]->getChecker().getGlobalBounds().intersects(floor[i][j]->getGround().getGlobalBounds()))
+			{
+				std::cout << "Robak o numerze " << wormNumber << " jest na pod³odze o wspolzednych " << i << ","<<j<< std::endl;
+				return floor[j][i];
+
+			}
 		}
 	}
 
@@ -41,8 +53,11 @@ Worm* World::foodEaten(int wormNumber)
 	return worms[wormNumber];
 }
 
-World::World()
+World::World(int x, int y)
 {
+	xWorldSize = x;
+	yWorldSize = y;
+
 	floorInit();
 
 	wormsInit();
@@ -53,14 +68,18 @@ World::World()
 
 World::~World()
 {
-	for (int i = 0; i < floor.size(); i++)
+	for (int i = 0; i < yWorldSize; i++)
 	{
-		delete(floor[i]);
+		for (int j = 0; j < xWorldSize; j++)
+		{
+			delete floor[i][j];
+		}
+		
 	}
 	floor.clear();
 	for (int i = 0; i < worms.size(); i++)
 	{
-		delete(worms[i]);
+		delete worms[i];
 	}
 	worms.clear();
 }
@@ -70,24 +89,59 @@ void World::update()
 {	
 	if (eatTimer.getElapsedTime().asSeconds() >.2f)
 	{
+		std::vector<Ground*> whereIsWorm;
 		for (int i = 0; i < worms.size(); i++) //sprawdzam dla kazdego robaka podloge
 		{
-			checker(i)->eatFood();
+			
+			whereIsWorm.push_back(checker(i)); //zczytywanie gdzie stoi robak
+			
+			whereIsWorm[i]->eatFood();
 			foodEaten(i);
+
+			bool is2Worms = false;
+			for (int k = i; k > 0; k--)
+			{
+				if (whereIsWorm[k]==whereIsWorm[k-1])
+				{
+					is2Worms = true;
+				}
+			}
+			if (worms[i]->eaten > 7 && worms[i]->isMature() && is2Worms && leyEggTimer.getElapsedTime().asSeconds() > 30)
+			{
+				layEggs(i,countNewWorms);
+				
+			}
 			if (worms[i]->wormDeath()) // sprawdzam czy robak osi¹gn¹ max wiek
 			{
-				delete(worms[i]);
+				delete worms[i] ;
 				worms.erase(worms.begin() + i);
 				//worms.resize(worms.size() - 1);
 			}
+			
 		}
+		whereIsWorm.clear();
+		for (int i = 0; i < eggs.size(); i++)
+		{
+			if (eggs[i]->wormDeath()) // sprawdzam czy jajka osi¹gn¹ max wiek
+			{
+				worms.push_back(new Worm(eggs[i]->getWorm().getPosition().x,
+					eggs[i]->getWorm().getPosition().y));
+				delete eggs[i];
+				eggs.erase(eggs.begin() + i);
+
+			}
+		}
+		
 		eatTimer.restart();
 	}
 	if (groundTimer.getElapsedTime().asSeconds() > restoreFoodTime)
 	{
-		for (int i = 0; i < floor.size(); i++)
+		for (int i = 0; i < yWorldSize; i++)
 		{
-			floor[i]->restoreFood();
+			for (int j = 0; j < xWorldSize; j++)
+			{
+				floor[i][j]->restoreFood();
+			}
 		}
 		groundTimer.restart();
 	}
@@ -98,16 +152,39 @@ void World::update()
 
 void World::drawWorld(sf::RenderWindow* window,float dt)
 {
-	for (int i = 0; i < 16; i++)
+	for (int i = 0; i < yWorldSize; i++)
 	{
-		window->draw(floor[i]->getGround());
+		for (int j = 0; j < xWorldSize; j++)
+		{
+			window->draw(floor[i][j]->getGround());
+		}	
 	}
 	for (int i = 0; i < worms.size(); i++)
 	{
-		worms[i]->movment(window->getSize().x,dt);
+		worms[i]->movment(xWorldSize*floor[0][0]->getGround().getSize().x,
+			yWorldSize * floor[0][0]->getGround().getSize().y,
+			dt);
 		window->draw(worms[i]->getWorm());
 		window->draw(worms[i]->checker);
 		
 	}
+	for (int i = 0; i < eggs.size(); i++)
+	{
+		window->draw(eggs[i]->getWorm());
+	}
 
+}
+
+void World::layEggs(int i, int count)
+{
+	for (int j = 0; j < count; j++)
+	{
+		eggs.push_back(new Eggs(worms[i]->getWorm().getPosition().x,
+			worms[i]->getWorm().getPosition().y,
+			10.f));
+	}
+	worms[i]->eaten = worms[i]->eaten - 5;
+	leyEggTimer.restart();
+	std::cout << "mamy jajo \n";
+	
 }
