@@ -14,12 +14,12 @@ D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm
           [
               T=float
           ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(55,11): warning C4244: "inicjowanie": konwersja z "const T" do "int", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(54,11): warning C4244: "inicjowanie": konwersja z "const T" do "int", możliwa utrata danych
           with
           [
               T=float
           ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(120,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(122,31): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(122,21): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(118,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(120,31): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(120,21): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
   HodowlaRobakow.vcxproj -> D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\Debug\HodowlaRobakow.exe
