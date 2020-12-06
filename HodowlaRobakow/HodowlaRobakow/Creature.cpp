@@ -27,3 +27,9 @@ sf::RectangleShape Creature::getChecker()
 {
 	return checker;
 }
+
+void Creature::checkerFixPosition()
+{
+	checker.setPosition(sprite.getPosition().x + sprite.getScale().x * sprite.getTexture()->getSize().x / 2,
+		checker.getPosition().y);
+}

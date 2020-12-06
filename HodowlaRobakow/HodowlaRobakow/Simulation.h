@@ -16,6 +16,8 @@ private:
 	sf::RenderWindow* optionWindow; // okno opcji 
 	sf::Event sfEvent; //fsml event
 
+	sf::View view;
+
 	Menu *menu; //menu opcji
 	World *world;
 

@@ -6,7 +6,9 @@ void Simulation::initWindow()
 	this->window = new sf::RenderWindow(sf::VideoMode(SIM_WINDOW_X,SIM_WINDOW_Y ), "Symulacja Robaków");
 	this->optionWindow = new sf::RenderWindow(sf::VideoMode(MENU_WINDOW_X, MENU_WINDOW_Y), "Symulacja Robaków Opcje");
     menu = new Menu();
-    world = new World(4,4);
+    world = new World(2,2);
+    view.reset(sf::FloatRect(-50.f, -50.f, SIM_WINDOW_X, SIM_WINDOW_Y));// ustawienie vidoku na normalny przesuniêty 
+    window->setView(view);
 }
 
 Simulation::Simulation()
@@ -31,7 +33,8 @@ void Simulation::updateSFMLEvents()
         {
             this->optionWindow->close();
             this->window->close();
-        }   
+        }
+     
     }
 }
 

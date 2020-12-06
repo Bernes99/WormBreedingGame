@@ -1,10 +1,6 @@
 #include "Worm.h"
 
-void Worm::checkerFixPosition()
-{
-	checker.setPosition(sprite.getPosition().x + sprite.getScale().x * sprite.getTexture()->getSize().x / 2,
-		checker.getPosition().y);
-}
+
 
 void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 {
@@ -169,6 +165,7 @@ Worm::Worm(int wormPosX, int wormPosY, std::vector <Eggs*>* egg)
 	timer.restart();
 	
 	checker.setFillColor(sf::Color::Blue);
+	checkerFixPosition();
 }
 
 
@@ -186,7 +183,7 @@ void Worm::reScale()
 
 			checkerFixPosition();
 
-			eaten = 0;
+			eaten = 1;
 		}
 	}
 	else // gdzy robak bedzie w lewo trzeba skalowanie robic dla ujemnych
@@ -199,7 +196,7 @@ void Worm::reScale()
 
 			checkerFixPosition();
 
-			eaten = 0;
+			eaten = 1;
 		}
 	}
 	
@@ -227,9 +224,10 @@ bool Worm::wormDeath()
 		hungerDie = true;
 		sprite.setColor(sf::Color(255, 0, 0));
 		hungerTimer.restart();
+		std::cout << "prawie umiera \n";
 
 	}
-	else if (eaten >= 0)
+	else if (eaten >= 0) // jak jest '=' to jest miganie xD
 	{
 		hungerDie = false;
 		sprite.setColor(sf::Color(255, 255, 255));

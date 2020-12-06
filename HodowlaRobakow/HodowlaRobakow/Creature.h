@@ -27,11 +27,11 @@ protected:
 
 	void setWormPosition(int positionX, int positionY);
 
-	
+	void checkerFixPosition();
 
 
 public:
-	int eaten = 3; // zjedzone jedzienie do nastepnego wzrostu
+	float eaten = 3.f; // zjedzone jedzienie do nastepnego wzrostu
 	sf::RectangleShape checker; //punkt odniesienie dla robaka
 
 	/// <summary>

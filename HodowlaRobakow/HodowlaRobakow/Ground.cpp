@@ -18,11 +18,15 @@ sf::RectangleShape Ground::getGround()
 	return ground;
 }
 
-void Ground::eatFood()
+bool Ground::eatFood()
 {
 	if (food>0)
 	{
 		food--;
+	}
+	else
+	{
+		return false;
 	}
 	
 	if (food/maxFood < 0.25f)
@@ -37,6 +41,7 @@ void Ground::eatFood()
 	{
 		ground.setFillColor(sf::Color(255, 255, 0));
 	}
+	return true;
 }
 
 void Ground::restoreFood()

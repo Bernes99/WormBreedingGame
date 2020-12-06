@@ -12,12 +12,14 @@ class World
 	std::vector <Eggs*> eggs;
 	//Worm *worm;
 	
+	std::vector<Ground*> whereIsWorm; ///
+
 	sf::Clock eatTimer; /// zegar odpowiadajacy za za obliczannie przerwy miedzy jedzeniem przez robaka
 
 	sf::Clock groundTimer; /// zegar odpowiedzialny za odnawianie sie jedzneia na powierzchni
 	
 	sf::Clock hungerTimer; /// zegar odpowiedzialny za czas skladania jaja
-	float hungerSpan = 3;
+	float hungerSpan = 2;
 
 	sf::Clock leyEggTimer; /// zegar odpowiedzialny za czas skladania jaja
 	float leyEggSpan =3; /// odstep pomiêdzy mozliwoscia kolejnego jajka

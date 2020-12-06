@@ -20,7 +20,7 @@ void World::floorInit()
 
 void World::wormsInit()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 7; i++)
 	{
 		worms.push_back(new Worm((int)floor[0][0]->getGround().getPosition().x,
 						(int)floor[0][0]->getGround().getPosition().y - (int)floor[0][0]->getGround().getSize().y, &eggs));
@@ -35,9 +35,9 @@ Ground* World::checker(int wormNumber)
 	{
 		for (int j = 0; j < xWorldSize; j++)
 		{
-			if (worms[wormNumber]->getChecker().getGlobalBounds().intersects(floor[i][j]->getGround().getGlobalBounds()))
+			if (worms[wormNumber]->getChecker().getGlobalBounds().intersects(floor[j][i]->getGround().getGlobalBounds()))
 			{
-				std::cout << "Robak o numerze " << wormNumber << " jest na pod³odze o wspolzednych " << i << ","<<j<< std::endl;
+				//std::cout << "Robak o numerze " << wormNumber << " jest na pod³odze o wspolzednych " << i << ","<<j<< std::endl;
 				return floor[j][i];
 
 			}
@@ -89,14 +89,17 @@ void World::update()
 {	
 	if (eatTimer.getElapsedTime().asSeconds() >.2f)
 	{
-		std::vector<Ground*> whereIsWorm;
+		
 		for (int i = 0; i < worms.size(); i++) //sprawdzam dla kazdego robaka podloge
 		{
 			
 			whereIsWorm.push_back(checker(i)); //zczytywanie gdzie stoi robak
 			
-			whereIsWorm[i]->eatFood();
-			foodEaten(i);
+			if (whereIsWorm[i]->eatFood())
+			{
+				foodEaten(i);
+			}
+			
 
 			bool is2Worms = false;
 			for (int k = i; k > 0; k--)
@@ -111,10 +114,7 @@ void World::update()
 				worms[i]->layEggs(i, countNewWorms);
 				leyEggTimer.restart();
 			}
-			if (hungerTimer.getElapsedTime().asSeconds() > hungerSpan)
-			{
-				worms[i]->eaten = worms[i]->eaten--;
-			}
+			std::cout << worms[i]->eaten << std::endl;
 
 
 			if (worms[i]->wormDeath()) // sprawdzam czy robak osi¹gn¹ max wiek
@@ -122,6 +122,11 @@ void World::update()
 				delete worms[i] ;
 				worms.erase(worms.begin() + i);
 				//worms.resize(worms.size() - 1);
+			}
+			if (hungerTimer.getElapsedTime().asSeconds() > hungerSpan)
+			{
+				worms[i]->eaten = worms[i]->eaten--;
+				hungerTimer.restart();
 			}
 			
 		}
@@ -146,7 +151,7 @@ void World::update()
 		{
 			for (int j = 0; j < xWorldSize; j++)
 			{
-				floor[i][j]->restoreFood();
+				//floor[i][j]->restoreFood();
 			}
 		}
 		groundTimer.restart();

@@ -30,13 +30,13 @@ private:
 
 	bool hungerDie = false; //czy robak przymiera g≥odem
 	sf::Clock hungerTimer; //czas jaki robak przymiera glodem
-	float maxHungerTime = 3; // maksymalny czas na g≥odzie 
+	float maxHungerTime = 1; // maksymalny czas na g≥odzie 
 
 	std::vector <Eggs*>* eggs; ///wskaünik do przekazywania vektora jajek
 
 protected:
 	
-	void checkerFixPosition();
+	
 	
 public:
 	

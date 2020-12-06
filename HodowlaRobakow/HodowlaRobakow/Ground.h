@@ -7,7 +7,7 @@ class Ground
 {
 protected:
 	sf::RectangleShape ground; /// kszta³t podloza
-	float maxFood=100; /// max ilosc jedzenia na podlozu
+	float maxFood=2; /// max ilosc jedzenia na podlozu
 	float food=maxFood; /// obecna ilosc jedzenia na podlozu
 	//float restoreSpeed = 1;
 	
@@ -34,7 +34,8 @@ public:
 	/// <summary>
 	/// odejmuje iloœæ zywanosci na podlozu
 	/// </summary>
-	void eatFood();
+	/// <returns> zwraca prawde jesli jest jedzenie</returns>
+	bool eatFood();
 
 	/// <summary>
 	/// przywraca ilosc zywnosci na podlozu
