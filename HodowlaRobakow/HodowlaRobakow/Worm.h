@@ -28,6 +28,8 @@ private:
 
 	float speed = 100.f;/// predkosc poruszania sie robaka
 
+
+
 	bool hungerDie = false; //czy robak przymiera g³odem
 	sf::Clock hungerTimer; //czas jaki robak przymiera glodem
 	float maxHungerTime = 1; // maksymalny czas na g³odzie 
@@ -40,6 +42,10 @@ protected:
 	
 public:
 	
+	sf::Clock leyEggTimer; /// zegar odpowiedzialny za czas skladania jaja
+	float leyEggSpan = 3; /// odstep pomiêdzy mozliwoscia kolejnego jajka
+
+
 	/// <summary>
 	/// poruszanie sie robaka
 	/// </summary>

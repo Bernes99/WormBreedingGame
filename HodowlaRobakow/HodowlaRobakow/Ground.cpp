@@ -18,18 +18,14 @@ sf::RectangleShape Ground::getGround()
 	return ground;
 }
 
-bool Ground::eatFood()
+bool Ground::eatFood(int wormFood)
 {
-	if (food>0)
-	{
-		food--;
-	}
-	else
-	{
-		return false;
-	}
 	
-	if (food/maxFood < 0.25f)
+	if (food == 0 )
+	{
+		ground.setFillColor(sf::Color(48, 28, 28));
+	}
+	else if (food/maxFood < 0.25f)
 	{
 		ground.setFillColor(sf::Color(255,0,0));
 	}
@@ -40,6 +36,15 @@ bool Ground::eatFood()
 	else if (food / maxFood < 0.75f)
 	{
 		ground.setFillColor(sf::Color(255, 255, 0));
+	}
+
+	if (food > 0 && wormFood < 10)
+	{
+		food--;
+	}
+	else
+	{
+		return false;
 	}
 	return true;
 }

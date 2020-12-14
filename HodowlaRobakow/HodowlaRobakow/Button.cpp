@@ -1,13 +1,14 @@
 #include "Button.h"
 
 
-
-
 Button::Button()
 {
+	
+
 	font.loadFromFile("../Resources/Font/arial.ttf");
 	text.setFont(font);
-
+	//value = new int{ 0 };
+	
 }
 
 void Button::upButton()
@@ -17,10 +18,13 @@ void Button::upButton()
 	button.setOutlineThickness(1.0f);
 	button.setOutlineColor(sf::Color::Black);
 	button.setOrigin(button.getPosition().x / 2.0f, button.getPosition().y / 2.0f);
+	
 
 	text.setString(">");
 	text.setFillColor(sf::Color::White);
 	text.setCharacterSize(20);
+	text.setOrigin(-5 , text.getCharacterSize()-1);
+	text.setRotation(90);
 
 }
 
@@ -31,10 +35,13 @@ void Button::downButton()
 	button.setOutlineThickness(1.0f);
 	button.setOutlineColor(sf::Color::Black);
 	button.setOrigin(button.getPosition().x / 2.0f, button.getPosition().y / 2.0f);
+	
 
 	text.setString("<");
 	text.setFillColor(sf::Color::White);
 	text.setCharacterSize(20);
+	text.setOrigin(-5, text.getCharacterSize()-1);
+	text.setRotation(90);
 }
 
 void Button::setPosition(int x, int y)
@@ -54,11 +61,11 @@ sf::RectangleShape Button::getButton()
 
 sf::Text Button::getButtonText()
 {
-	setTextPosition();
+	
 	return text;
 }
 
-void Button::setTextPosition()
+void Button::setTextFixPosition()
 {
 	text.setPosition(
 		button.getPosition().x + (button.getGlobalBounds().width / 2.0f) - 1.25f*text.getGlobalBounds().width / 2.0f,
@@ -78,5 +85,38 @@ void Button::valueFild()
 	text.setCharacterSize(15);
 	
 }
+
+void Button::nameFild(sf::String text)
+{
+	
+	this->text.setString(text);
+	this->text.setFillColor(sf::Color::White);
+	this->text.setCharacterSize(15);
+}
+
+void Button::setNamePosition(int x,int y)
+{
+
+	text.setPosition(sf::Vector2f(x, y));
+}
+
+void Button::increasValue(float i)
+{
+	if (i<0 && value ==0)
+	{
+		return;
+	}
+
+	value = value + (int)i;
+	text.setString(std::to_string(value));
+	
+}
+
+void Button::setValue(int i)
+{
+	value = i;
+}
+
+
 
 

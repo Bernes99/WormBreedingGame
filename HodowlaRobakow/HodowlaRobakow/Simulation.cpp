@@ -5,10 +5,15 @@ void Simulation::initWindow()
 {
 	this->window = new sf::RenderWindow(sf::VideoMode(SIM_WINDOW_X,SIM_WINDOW_Y ), "Symulacja Robaków");
 	this->optionWindow = new sf::RenderWindow(sf::VideoMode(MENU_WINDOW_X, MENU_WINDOW_Y), "Symulacja Robaków Opcje");
-    menu = new Menu();
-    world = new World(2,2);
+    
+    worldSize = new int{ 15 };
+
+    world = new World(*worldSize, *worldSize);
+    menu = new Menu(*worldSize);
+
     view.reset(sf::FloatRect(-50.f, -50.f, SIM_WINDOW_X, SIM_WINDOW_Y));// ustawienie vidoku na normalny przesuniêty 
     window->setView(view);
+   
 }
 
 Simulation::Simulation()
@@ -26,15 +31,22 @@ Simulation::~Simulation()
 
 void Simulation::updateSFMLEvents()
 {
-    while (this->window->pollEvent(this->sfEvent)
-        || this->optionWindow->pollEvent(this->sfEvent))
+
+    mouseViewPos = (sf::Vector2i)(sf::Mouse::getPosition(*optionWindow));
+    while ( this->optionWindow->pollEvent(this->sfEvent)
+        || this->window->pollEvent(this->sfEvent))
     {
         if (sfEvent.type == sf::Event::Closed)
         {
             this->optionWindow->close();
             this->window->close();
         }
-     
+        
+        if (sfEvent.type == sf::Event::MouseButtonPressed &&(sf::Mouse::isButtonPressed(sf::Mouse::Left)))
+        {
+            
+            menu->isClicked(mouseViewPos,worldSize);
+        }
     }
 }
 

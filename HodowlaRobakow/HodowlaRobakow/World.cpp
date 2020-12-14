@@ -1,5 +1,8 @@
 #include "World.h"
 
+
+
+
 void World::floorInit()
 {
 	for (int i = 0; i < yWorldSize; i++)
@@ -95,7 +98,7 @@ void World::update()
 			
 			whereIsWorm.push_back(checker(i)); //zczytywanie gdzie stoi robak
 			
-			if (whereIsWorm[i]->eatFood())
+			if (whereIsWorm[i]->eatFood(worms[i]->eaten) && worms[i]->eaten<10)
 			{
 				foodEaten(i);
 			}
@@ -104,16 +107,19 @@ void World::update()
 			bool is2Worms = false;
 			for (int k = i; k > 0; k--)
 			{
-				if (whereIsWorm[k]==whereIsWorm[k-1])
+				if (whereIsWorm[i]==whereIsWorm[k-1])
 				{
 					is2Worms = true;
+					worms[k - 1]->leyEggTimer.restart();
 				}
 			}
-			if (worms[i]->eaten > 7 && worms[i]->isMature() && is2Worms && leyEggTimer.getElapsedTime().asSeconds() > leyEggSpan)
+			
+			if (worms[i]->eaten > 7 && worms[i]->isMature() && is2Worms)
 			{
 				worms[i]->layEggs(i, countNewWorms);
-				leyEggTimer.restart();
 			}
+			
+			
 			std::cout << worms[i]->eaten << std::endl;
 
 
@@ -128,9 +134,10 @@ void World::update()
 				worms[i]->eaten = worms[i]->eaten--;
 				hungerTimer.restart();
 			}
-			
 		}
+
 		whereIsWorm.clear();
+		
 		for (int i = 0; i < eggs.size(); i++)
 		{
 			if (eggs[i]->wormDeath()) // sprawdzam czy jajka osi¹gn¹ max wiek
@@ -151,7 +158,7 @@ void World::update()
 		{
 			for (int j = 0; j < xWorldSize; j++)
 			{
-				//floor[i][j]->restoreFood();
+				floor[i][j]->restoreFood();
 			}
 		}
 		groundTimer.restart();
@@ -184,6 +191,17 @@ void World::drawWorld(sf::RenderWindow* window,float dt)
 		window->draw(*eggs[i]->getCreature());
 	}
 
+}
+
+void World::worldReSize(int x, int y)
+{
+
+	xWorldSize = x;
+	yWorldSize = y;
+
+	floorInit();
+
+	wormsInit();
 }
 
 

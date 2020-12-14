@@ -251,15 +251,19 @@ bool Worm::isMature()
 
 void Worm::layEggs(int i, int count)
 {
-	for (int j = 0; j < count; j++)
+	if (leyEggTimer.getElapsedTime().asSeconds() >leyEggSpan)
 	{
-		eggs->push_back(new Eggs(this->checker.getPosition().x,
-			this->checker.getPosition().y,
-			10.f));
+		for (int j = 0; j < count; j++)
+		{
+			eggs->push_back(new Eggs(this->checker.getPosition().x,
+				this->checker.getPosition().y,
+				10.f));
+		}
+		this->eaten = this->eaten - 5;
+		leyEggTimer.restart();
+		std::cout << "mamy jajo \n";
 	}
-	this->eaten = this->eaten - 5;
 	
-	std::cout << "mamy jajo \n";
 
 }
 

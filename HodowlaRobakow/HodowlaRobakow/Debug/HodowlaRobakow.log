@@ -1,39 +1,45 @@
-﻿  Simulation.cpp
-  Worm.cpp
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(18,19): warning C4244: "=": konwersja z "T" do "float", możliwa utrata danych
-          with
-          [
-              T=unsigned int
-          ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(21,20): warning C4244: "=": konwersja z "T" do "float", możliwa utrata danych
-          with
-          [
-              T=unsigned int
-          ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(24,19): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(27,20): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(35,10): warning C4244: "inicjowanie": konwersja z "const T" do "int", możliwa utrata danych
+﻿  Menu.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(39,117): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
           with
           [
               T=float
           ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(48,11): warning C4244: "inicjowanie": konwersja z "const T" do "int", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(39,69): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
           with
           [
               T=float
           ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(153,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(155,31): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(155,21): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(257,31): warning C4244: "argument": konwersja z "const T" do "int", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(48,44): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
           with
           [
               T=float
           ]
-D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(256,55): warning C4244: "argument": konwersja z "const T" do "int", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(47,82): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
           with
           [
               T=float
           ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(55,44): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(54,82): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(88,115): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(88,70): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+  Simulation.cpp
+  main.cpp
   Generowanie kodu...
   HodowlaRobakow.vcxproj -> D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\Debug\HodowlaRobakow.exe

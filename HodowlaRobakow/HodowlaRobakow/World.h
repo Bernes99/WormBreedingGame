@@ -5,6 +5,9 @@
 #include "Worm.h"
 #include "Eggs.h"
 
+
+
+
 class World
 {
 	std::vector<std::vector<Ground*>> floor;
@@ -14,6 +17,7 @@ class World
 	
 	std::vector<Ground*> whereIsWorm; ///
 
+
 	sf::Clock eatTimer; /// zegar odpowiadajacy za za obliczannie przerwy miedzy jedzeniem przez robaka
 
 	sf::Clock groundTimer; /// zegar odpowiedzialny za odnawianie sie jedzneia na powierzchni
@@ -21,8 +25,6 @@ class World
 	sf::Clock hungerTimer; /// zegar odpowiedzialny za czas skladania jaja
 	float hungerSpan = 2;
 
-	sf::Clock leyEggTimer; /// zegar odpowiedzialny za czas skladania jaja
-	float leyEggSpan =3; /// odstep pomiêdzy mozliwoscia kolejnego jajka
 
 	float restoreFoodTime=10.0f; /// szybkosc odnawiania sie podloza
 
@@ -64,6 +66,8 @@ public:
 	/// <param name="window">okno na którym jest rysowanie</param>
 	/// <param name="dt">delta time</param>
 	void drawWorld(sf::RenderWindow* window,float dt);
+
+	void worldReSize(int x, int y);
 
 	
 };

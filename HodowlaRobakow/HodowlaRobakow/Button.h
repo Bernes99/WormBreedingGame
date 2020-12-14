@@ -3,9 +3,10 @@
 #include <iostream>
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 
 
-class Button
+class Button : public sf::Drawable
 {
 
 private:
@@ -62,12 +63,26 @@ public:
 	/// <summary>
 	/// ustawiwia pozycje tekstu wzgledem przycisku
 	/// </summary>
-	void setTextPosition();
+	void setTextFixPosition();
 
 	/// <summary>
 	/// ustawia przycisk jako pole z wartosci¹ 
 	/// </summary>
 	void valueFild();
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
+	{
+		target.draw(button, states);
+		target.draw(text, states);
+	}
+
+	void nameFild(sf::String text);
+
+	void setNamePosition(int x, int y);
+
+	void increasValue(float i);
+
+	void setValue(int i);
+
 
 };
 

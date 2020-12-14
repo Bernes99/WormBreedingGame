@@ -4,8 +4,8 @@
 #include "World.h"
 #define SIM_WINDOW_X 1024
 #define SIM_WINDOW_Y 768
-#define MENU_WINDOW_X 200
-#define MENU_WINDOW_Y 200
+#define MENU_WINDOW_X 350
+#define MENU_WINDOW_Y 500
 
 class Simulation
 {
@@ -17,6 +17,10 @@ private:
 	sf::Event sfEvent; //fsml event
 
 	sf::View view;
+
+	sf::Vector2i mouseViewPos;
+
+	int *worldSize ;
 
 	Menu *menu; //menu opcji
 	World *world;
