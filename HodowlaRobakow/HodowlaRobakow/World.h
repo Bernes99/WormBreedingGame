@@ -17,16 +17,19 @@ class World
 	
 	std::vector<Ground*> whereIsWorm; ///
 
+	variable* data;
+
 
 	sf::Clock eatTimer; /// zegar odpowiadajacy za za obliczannie przerwy miedzy jedzeniem przez robaka
 
 	sf::Clock groundTimer; /// zegar odpowiedzialny za odnawianie sie jedzneia na powierzchni
 	
 	sf::Clock hungerTimer; /// zegar odpowiedzialny za czas skladania jaja
-	float hungerSpan = 2;
+	float hungerSpan;
 
+	float eatSpeed; //predkosc z jak jedz¹ robaki
 
-	float restoreFoodTime=10.0f; /// szybkosc odnawiania sie podloza
+	float restoreFoodTime; /// szybkosc odnawiania sie podloza
 
 	void floorInit();
 	void wormsInit();
@@ -49,9 +52,9 @@ class World
 	/// <returns>zwraca wskaŸnik na obiekt robaka</returns>
 	Worm* foodEaten(int wormNumber);
 protected:
-	int countNewWorms = 2; /// ilosc robaków z 1 jajka 
+	int countNewWorms; /// ilosc robaków z 1 jajka 
 public:
-	World(int x,int y);
+	World(int x,int y, variable* data);
 	~World();
 
 
@@ -69,6 +72,9 @@ public:
 
 	void worldReSize(int x, int y);
 
+	void updateVariable();
+	
+	
 	
 };
 

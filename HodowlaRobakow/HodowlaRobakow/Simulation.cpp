@@ -6,10 +6,20 @@ void Simulation::initWindow()
 	this->window = new sf::RenderWindow(sf::VideoMode(SIM_WINDOW_X,SIM_WINDOW_Y ), "Symulacja Robaków");
 	this->optionWindow = new sf::RenderWindow(sf::VideoMode(MENU_WINDOW_X, MENU_WINDOW_Y), "Symulacja Robaków Opcje");
     
+    sf::Image icon;
+    if (!icon.loadFromFile("../Resources/Textures/worm.png"))
+    {
+        std::cout<<"nie zaladowano ikony";
+    }
+    this->window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+    this->optionWindow->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+
     worldSize = new int{ 15 };
 
-    world = new World(*worldSize, *worldSize);
-    menu = new Menu(*worldSize);
+    data = new variable;
+
+    world = new World(*worldSize, *worldSize, data);
+    menu = new Menu(*worldSize,data);
 
     view.reset(sf::FloatRect(-50.f, -50.f, SIM_WINDOW_X, SIM_WINDOW_Y));// ustawienie vidoku na normalny przesuniêty 
     window->setView(view);
@@ -25,6 +35,7 @@ Simulation::~Simulation()
 {
     delete this->window;
     delete this->optionWindow;
+    delete data;
     delete(menu);
 
 }

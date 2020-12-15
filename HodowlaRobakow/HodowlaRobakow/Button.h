@@ -13,7 +13,7 @@ private:
 	sf::RectangleShape button; // kaszat³t przycisku
 	sf::Text text; //tekst przycisku 
 	sf::Font font; // font przycisk
-	int value=0; // wartosc zmiennej
+	float value=0; // wartosc zmiennej
 
 	
 public:
@@ -81,9 +81,12 @@ public:
 
 	void increasValue(float i);
 
-	void setValue(int i);
+	void setValue(float i);
 
 
+	float getValue();
+
+	std::string precision(float num, int precision);
 };
 
 

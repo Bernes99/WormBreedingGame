@@ -6,6 +6,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
+#include "data.h"
 
 
 class Creature
@@ -17,7 +18,6 @@ protected:
 	sf::Clock deathTime;// zegar odlczajacy do œmeirci robaka
 	float maxLifeTime = 120.f; //maxymalny czas zycia
 
-	
 
 	/// <summary>
 	/// za³adowuje teksture i tworzy sprita
@@ -31,7 +31,7 @@ protected:
 
 
 public:
-	float eaten = 3.f; // zjedzone jedzienie do nastepnego wzrostu
+	
 	sf::RectangleShape checker; //punkt odniesienie dla robaka
 
 	/// <summary>

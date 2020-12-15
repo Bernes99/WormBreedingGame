@@ -2,18 +2,19 @@
 
 #include "Button.h"
 #include <vector>
+#include "data.h"
 
 class Menu
 {
 private:
-
+	variable* data;
 
 	/// <summary>
 	/// inicjalizacja przycisków ca³ego menu
 	/// </summary>
 	void initButtons();
 	
-	int setsNumber = 5;
+	int setsNumber = 11;
 	std::vector<std::vector<Button*>> sets;// tablica przycisków pierwszego zerowej zmiennej gdzie indeks 0 to zmienna ,1 to przycisk zwiekszania, 2 przycisk zmniejszania 
 
 	
@@ -27,9 +28,9 @@ private:
 public:
 	int wroldSize;
 
+	
 
-
-	Menu(int wroldSize);
+	Menu(int wroldSize, variable* pData);
 	
 	/// <summary>
 	/// jeszcze nwm

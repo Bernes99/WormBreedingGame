@@ -3,7 +3,6 @@
 class Eggs :
     public Creature
 {
-
 public:
     Eggs(int positionX,int positionY,float lifeTime);
     void setEggDeath(float time);

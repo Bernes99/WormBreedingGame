@@ -74,13 +74,13 @@ void Button::setTextFixPosition()
 
 void Button::valueFild()
 {
-	button.setSize(sf::Vector2f(30.0f, 20.f));
+	button.setSize(sf::Vector2f(45.0f, 20.f));
 	button.setOrigin(button.getSize().x / 2.0f, button.getSize().y / 2.0f);
 	button.setOutlineThickness(1.0f);
 	button.setOutlineColor(sf::Color::Black);
 	button.setOrigin(button.getPosition().x / 2.0f, button.getPosition().y / 2.0f);
 
-	text.setString(std::to_string(value));
+	text.setString(precision(value, 2));
 	text.setFillColor(sf::Color::White);
 	text.setCharacterSize(15);
 	
@@ -107,14 +107,29 @@ void Button::increasValue(float i)
 		return;
 	}
 
-	value = value + (int)i;
-	text.setString(std::to_string(value));
+	value = value + i;
+	text.setString(precision(value,2));
 	
 }
 
-void Button::setValue(int i)
+void Button::setValue(float i)
 {
 	value = i;
+}
+
+float Button::getValue()
+{
+	return value;
+}
+
+std::string Button::precision(float num, int precision)
+{
+	std::string temp;
+
+	temp = std::to_string(num);
+	temp = temp.substr(0, temp.find(".") + precision + 1);
+
+	return temp;
 }
 
 

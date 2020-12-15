@@ -11,7 +11,7 @@ void World::floorInit()
 
 		for (int j = 0; j < xWorldSize; j++)
 		{
-			horizontalFloor.push_back(new Ground());
+			horizontalFloor.push_back(new Ground(data));
 			horizontalFloor[j]->setPosition(j * horizontalFloor[j]->getGround().getSize().x,
 										i* horizontalFloor[j]->getGround().getSize().y);
 		}
@@ -26,7 +26,7 @@ void World::wormsInit()
 	for (int i = 0; i < 7; i++)
 	{
 		worms.push_back(new Worm((int)floor[0][0]->getGround().getPosition().x,
-						(int)floor[0][0]->getGround().getPosition().y - (int)floor[0][0]->getGround().getSize().y, &eggs));
+						(int)floor[0][0]->getGround().getPosition().y - (int)floor[0][0]->getGround().getSize().y, &eggs,data));
 
 	}
 
@@ -56,11 +56,13 @@ Worm* World::foodEaten(int wormNumber)
 	return worms[wormNumber];
 }
 
-World::World(int x, int y)
+World::World(int x, int y, variable* data)
 {
 	xWorldSize = x;
 	yWorldSize = y;
 
+	this->data = data;
+	updateVariable();
 	floorInit();
 
 	wormsInit();
@@ -90,9 +92,10 @@ World::~World()
 
 void World::update()
 {	
-	if (eatTimer.getElapsedTime().asSeconds() >.2f)
+	updateVariable();
+	if (eatTimer.getElapsedTime().asSeconds() > eatSpeed)
 	{
-		
+		std::cout <<std::endl <<eatSpeed;
 		for (int i = 0; i < worms.size(); i++) //sprawdzam dla kazdego robaka podloge
 		{
 			
@@ -120,7 +123,7 @@ void World::update()
 			}
 			
 			
-			std::cout << worms[i]->eaten << std::endl;
+			//std::cout << worms[i]->eaten << std::endl;
 
 
 			if (worms[i]->wormDeath()) // sprawdzam czy robak osi¹gn¹ max wiek
@@ -143,7 +146,7 @@ void World::update()
 			if (eggs[i]->wormDeath()) // sprawdzam czy jajka osi¹gn¹ max wiek
 			{
 				worms.push_back(new Worm(eggs[i]->getCreature()->getPosition().x,
-					eggs[i]->getCreature()->getPosition().y, &eggs));
+					eggs[i]->getCreature()->getPosition().y, &eggs,data));
 				delete eggs[i];
 				eggs.erase(eggs.begin() + i);
 
@@ -175,6 +178,7 @@ void World::drawWorld(sf::RenderWindow* window,float dt)
 		for (int j = 0; j < xWorldSize; j++)
 		{
 			window->draw(floor[i][j]->getGround());
+			floor[i][j]->updateValues();
 		}	
 	}
 	for (int i = 0; i < worms.size(); i++)
@@ -182,8 +186,9 @@ void World::drawWorld(sf::RenderWindow* window,float dt)
 		worms[i]->movment(xWorldSize*floor[0][0]->getGround().getSize().x,
 			yWorldSize * floor[0][0]->getGround().getSize().y,
 			dt);
+		worms[i]->updateVariable();
 		window->draw(*worms[i]->getCreature());
-		window->draw(worms[i]->checker);
+		//window->draw(worms[i]->checker);
 		
 	}
 	for (int i = 0; i < eggs.size(); i++)
@@ -202,6 +207,15 @@ void World::worldReSize(int x, int y)
 	floorInit();
 
 	wormsInit();
+}
+
+
+void World::updateVariable()
+{
+	hungerSpan = data->hungerSpan;
+	restoreFoodTime = data->restoreFoodTime;
+	countNewWorms = data->countNewWorms;
+	eatSpeed = data->eatSpeed;
 }
 
 

@@ -4,8 +4,8 @@
 #include "World.h"
 #define SIM_WINDOW_X 1024
 #define SIM_WINDOW_Y 768
-#define MENU_WINDOW_X 350
-#define MENU_WINDOW_Y 500
+#define MENU_WINDOW_X 450
+#define MENU_WINDOW_Y 600
 
 class Simulation
 {
@@ -24,6 +24,7 @@ private:
 
 	Menu *menu; //menu opcji
 	World *world;
+	variable* data;
 
 	// delta time 
 	sf::Clock dtClock; // delta time clock

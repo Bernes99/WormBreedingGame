@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
+#include "data.h"
 
 class Ground
 {
@@ -11,12 +11,13 @@ protected:
 	float food=maxFood; /// obecna ilosc jedzenia na podlozu
 	//float restoreSpeed = 1;
 	
+	variable *data;
 
 public:
 	/// <summary>
 	/// konstruktor ground ustawiajacy kolor i rozmiar 
 	/// </summary>
-	Ground();
+	Ground(variable* data);
 
 	/// <summary>
 	/// ustawia pozycje pojedynczego pod³oza
@@ -42,6 +43,6 @@ public:
 	/// </summary>
 	void restoreFood();
 
-
+	void updateValues();
 };
 

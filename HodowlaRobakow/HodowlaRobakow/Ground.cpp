@@ -1,7 +1,10 @@
 #include "Ground.h"
 
-Ground::Ground()
+Ground::Ground(variable* data)
 {
+
+	this->data = data;
+	updateValues();
 	ground.setSize(sf::Vector2f(64.0f, 20.f));
 	ground.setOutlineThickness(1.f);
 	ground.setOutlineColor(sf::Color(0, 102, 0, 255));
@@ -69,5 +72,10 @@ void Ground::restoreFood()
 	{
 		ground.setFillColor(sf::Color(255, 127, 80));
 	}
+}
+
+void Ground::updateValues()
+{
+	maxFood = data->maxFood;
 }
 

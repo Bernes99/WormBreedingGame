@@ -143,8 +143,11 @@ void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 	
 }
 
-Worm::Worm(int wormPosX, int wormPosY, std::vector <Eggs*>* egg)
+Worm::Worm(int wormPosX, int wormPosY, std::vector <Eggs*>* egg, variable* data)
 {
+
+	this->data = data;
+	updateVariable();
 
 	this->eggs = egg;
 
@@ -166,6 +169,11 @@ Worm::Worm(int wormPosX, int wormPosY, std::vector <Eggs*>* egg)
 	
 	checker.setFillColor(sf::Color::Blue);
 	checkerFixPosition();
+}
+
+Worm::~Worm()
+{
+
 }
 
 
@@ -241,7 +249,7 @@ bool Worm::wormDeath()
 
 bool Worm::isMature()
 {
-	if (deathTime.getElapsedTime().asSeconds() >= maxLifeTime * 0.1f)
+	if (deathTime.getElapsedTime().asSeconds() >= maxLifeTime * notMature)
 	{
 		return true;
 	}
@@ -257,13 +265,24 @@ void Worm::layEggs(int i, int count)
 		{
 			eggs->push_back(new Eggs(this->checker.getPosition().x,
 				this->checker.getPosition().y,
-				10.f));
+				eggIncubate));
 		}
 		this->eaten = this->eaten - 5;
 		leyEggTimer.restart();
 		std::cout << "mamy jajo \n";
 	}
 	
+
+}
+
+void Worm::updateVariable()
+{
+	maxScale = data->maxScale;
+	notMature = data->notMature;
+	maxHungerTime = data->maxHungerTime;
+	eggIncubate = data->eggIncubate;
+	leyEggSpan = data->leyEggSpan;
+	maxLifeTime = data->maxLifeTime;
 
 }
 
