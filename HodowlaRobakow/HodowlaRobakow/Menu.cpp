@@ -71,7 +71,7 @@ void Menu::initSet()
 			name = L"max rozmiar";
 			break;
 		case 4:
-			name = L"okres dojzewania(% max zycia)";
+			name = L"okres dojrzewania(% max ¿ycia)";
 			break;
 		case 5:
 			name = L"max czas bez jedzenia";
@@ -241,13 +241,13 @@ void Menu::drawMenu(sf::RenderWindow* window)
 	
 }
 
-void Menu::isClicked(sf::Vector2i mousePos,int* worldSize)
+void Menu::isClicked(sf::Vector2i mousePos)
 {
 	/*countNewWorms*/
 	if (sets[0][1]->getButton().getGlobalBounds().contains(sf::Vector2f(mousePos)))
 	{
 		sets[0][0]->increasValue(1);
-		*worldSize = *worldSize + 1;
+		
 	}
 	if (sets[0][2]->getButton().getGlobalBounds().contains(sf::Vector2f(mousePos)))
 	{

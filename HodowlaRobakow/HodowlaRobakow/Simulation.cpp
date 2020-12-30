@@ -17,7 +17,7 @@ void Simulation::initWindow()
     worldSize = new int{ 15 };
 
     data = new variable;
-
+    
     world = new World(*worldSize, *worldSize, data);
     menu = new Menu(*worldSize,data);
 
@@ -44,6 +44,7 @@ void Simulation::updateSFMLEvents()
 {
 
     mouseViewPos = (sf::Vector2i)(sf::Mouse::getPosition(*optionWindow));
+    mouseSimViewPos = (sf::Vector2i)(sf::Mouse::getPosition(*window));
     while ( this->optionWindow->pollEvent(this->sfEvent)
         || this->window->pollEvent(this->sfEvent))
     {
@@ -55,8 +56,8 @@ void Simulation::updateSFMLEvents()
         
         if (sfEvent.type == sf::Event::MouseButtonPressed &&(sf::Mouse::isButtonPressed(sf::Mouse::Left)))
         {
-            
-            menu->isClicked(mouseViewPos,worldSize);
+            menu->isClicked(mouseViewPos);
+            world->isClicked(mouseSimViewPos);
         }
     }
 }

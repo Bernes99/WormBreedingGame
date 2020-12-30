@@ -218,4 +218,22 @@ void World::updateVariable()
 	eatSpeed = data->eatSpeed;
 }
 
+void World::isClicked(sf::Vector2i mousePos)
+{
+	mousePos.x -= 50;
+	mousePos.y -= 50;
+	for (int i = 0; i < yWorldSize; i++)
+	{
+		for (int j = 0; j < xWorldSize; j++)
+		{
+			if (floor[j][i]->getGround().getGlobalBounds().contains(sf::Vector2f(mousePos)))
+			{
+				worms.push_back(new Worm(mousePos.x,mousePos.y, &eggs, data));
+
+			}
+		}
+	}
+	
+}
+
 

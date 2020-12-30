@@ -43,7 +43,7 @@ public:
 	/// <param name="window"> - okno na ktorym rysowane bed¹ przyciski </param>
 	void drawMenu(sf::RenderWindow* window);
 
-	void isClicked(sf::Vector2i mousePos, int* worldSize);
+	void isClicked(sf::Vector2i mousePos);
 
 	
 };

@@ -74,7 +74,7 @@ public:
 
 	void updateVariable();
 	
-	
+	void isClicked(sf::Vector2i mousePos);
 	
 };
 

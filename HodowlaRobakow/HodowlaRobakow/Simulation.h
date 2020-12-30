@@ -19,6 +19,7 @@ private:
 	sf::View view;
 
 	sf::Vector2i mouseViewPos;
+	sf::Vector2i mouseSimViewPos;
 
 	int *worldSize ;
 
