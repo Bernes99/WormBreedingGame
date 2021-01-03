@@ -79,7 +79,7 @@ public:
 
 	void setNamePosition(int x, int y);
 
-	void increasValue(float i);
+	void increasValue(float i, float downLimit, float upLimit);
 
 	void setValue(float i);
 
@@ -87,6 +87,8 @@ public:
 	float getValue();
 
 	std::string precision(float num, int precision);
+
+	void setSize(float x, float y);
 };
 
 

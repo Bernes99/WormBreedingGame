@@ -38,10 +38,10 @@ Ground* World::checker(int wormNumber)
 	{
 		for (int j = 0; j < xWorldSize; j++)
 		{
-			if (worms[wormNumber]->getChecker().getGlobalBounds().intersects(floor[j][i]->getGround().getGlobalBounds()))
+			if (worms[wormNumber]->getChecker().getGlobalBounds().intersects(floor[i][j]->getGround().getGlobalBounds()))
 			{
 				//std::cout << "Robak o numerze " << wormNumber << " jest na pod³odze o wspolzednych " << i << ","<<j<< std::endl;
-				return floor[j][i];
+				return floor[i][j];
 
 			}
 		}
@@ -56,10 +56,10 @@ Worm* World::foodEaten(int wormNumber)
 	return worms[wormNumber];
 }
 
-World::World(int x, int y, variable* data)
+World::World(sf::Vector2i worldSize, variable* data)
 {
-	xWorldSize = x;
-	yWorldSize = y;
+	xWorldSize = worldSize.x;
+	yWorldSize = worldSize.y;
 
 	this->data = data;
 	updateVariable();
@@ -226,7 +226,7 @@ void World::isClicked(sf::Vector2i mousePos)
 	{
 		for (int j = 0; j < xWorldSize; j++)
 		{
-			if (floor[j][i]->getGround().getGlobalBounds().contains(sf::Vector2f(mousePos)))
+			if (floor[i][j]->getGround().getGlobalBounds().contains(sf::Vector2f(mousePos)))
 			{
 				worms.push_back(new Worm(mousePos.x,mousePos.y, &eggs, data));
 

@@ -6,6 +6,11 @@ void Simulation::initWindow()
 	this->window = new sf::RenderWindow(sf::VideoMode(SIM_WINDOW_X,SIM_WINDOW_Y ), "Symulacja Robaków");
 	this->optionWindow = new sf::RenderWindow(sf::VideoMode(MENU_WINDOW_X, MENU_WINDOW_Y), "Symulacja Robaków Opcje");
     
+    this->window->setPosition(sf::Vector2i(window->getPosition().x - window->getSize().x/5,
+        window->getPosition().y));
+    this->optionWindow->setPosition(sf::Vector2i(window->getPosition().x + window->getSize().x,
+        window->getPosition().y));
+
     sf::Image icon;
     if (!icon.loadFromFile("../Resources/Textures/worm.png"))
     {
@@ -13,13 +18,12 @@ void Simulation::initWindow()
     }
     this->window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     this->optionWindow->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-
-    worldSize = new int{ 15 };
+    
 
     data = new variable;
     
-    world = new World(*worldSize, *worldSize, data);
-    menu = new Menu(*worldSize,data);
+    world = new World(worldSize, data);
+    menu = new Menu(data);
 
     view.reset(sf::FloatRect(-50.f, -50.f, SIM_WINDOW_X, SIM_WINDOW_Y));// ustawienie vidoku na normalny przesuniêty 
     window->setView(view);
@@ -28,7 +32,7 @@ void Simulation::initWindow()
 
 Simulation::Simulation()
 {
-    this->initWindow();
+    this->worldSizeWindow();
 }
 
 Simulation::~Simulation()
@@ -97,4 +101,43 @@ void Simulation::updateDt()
 
     //system("cls");
     //std::cout << this->dt << std::endl;
+}
+
+void Simulation::worldSizeWindow()
+{
+    this->window = new sf::RenderWindow(sf::VideoMode(SIZE_WINDOW_X, SIZE_WINDOW_Y), "Symulacja Robaków");
+    
+    menu = new Menu(data,true);
+    //worldSize = new sf::Vector2i(10, 10);
+    
+    while (this->window->isOpen())
+    {
+        this->window->clear();
+
+        mouseSimViewPos = (sf::Vector2i)(sf::Mouse::getPosition(*window));
+        while (this->window->pollEvent(this->sfEvent))
+        {
+            if (sfEvent.type == sf::Event::Closed)
+            {
+                this->window->close();
+                exit(0);
+            }
+            if (sfEvent.type == sf::Event::MouseButtonPressed && (sf::Mouse::isButtonPressed(sf::Mouse::Left)))
+            {
+                if (menu->isClickedWorldSize(mouseSimViewPos, &worldSize))
+                {
+                    this->window->close();
+                }
+
+            }
+        }
+
+        this->menu->drawWorldSizeMenu(this->window);
+
+        this->window->display();
+    }
+    
+    delete this->window;
+    delete this->menu;
+    this->initWindow();
 }

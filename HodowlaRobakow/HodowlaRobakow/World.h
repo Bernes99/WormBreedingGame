@@ -53,8 +53,10 @@ class World
 	Worm* foodEaten(int wormNumber);
 protected:
 	int countNewWorms; /// ilosc robaków z 1 jajka 
+
 public:
-	World(int x,int y, variable* data);
+
+	World(sf::Vector2i worldSize, variable* data);
 	~World();
 
 

@@ -23,8 +23,8 @@ void Button::upButton()
 	text.setString(">");
 	text.setFillColor(sf::Color::White);
 	text.setCharacterSize(20);
-	text.setOrigin(-5 , text.getCharacterSize()-1);
-	text.setRotation(90);
+	text.setOrigin(17 , text.getCharacterSize() - 13);
+	text.setRotation(-90);
 
 }
 
@@ -40,8 +40,8 @@ void Button::downButton()
 	text.setString("<");
 	text.setFillColor(sf::Color::White);
 	text.setCharacterSize(20);
-	text.setOrigin(-5, text.getCharacterSize()-1);
-	text.setRotation(90);
+	text.setOrigin(17, text.getCharacterSize() - 13);
+	text.setRotation(-90);
 }
 
 void Button::setPosition(int x, int y)
@@ -100,9 +100,9 @@ void Button::setNamePosition(int x,int y)
 	text.setPosition(sf::Vector2f(x, y));
 }
 
-void Button::increasValue(float i)
+void Button::increasValue(float i , float downLimit, float upLimit)
 {
-	if (i<0 && value ==0)
+	if ((i<0 && value <= downLimit)||(i > 0 && value >= upLimit))
 	{
 		return;
 	}
@@ -130,6 +130,11 @@ std::string Button::precision(float num, int precision)
 	temp = temp.substr(0, temp.find(".") + precision + 1);
 
 	return temp;
+}
+
+void Button::setSize(float x, float y)
+{
+	button.setSize(sf::Vector2f(x, y));
 }
 
 

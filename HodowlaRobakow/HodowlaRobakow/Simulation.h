@@ -6,6 +6,8 @@
 #define SIM_WINDOW_Y 768
 #define MENU_WINDOW_X 450
 #define MENU_WINDOW_Y 600
+#define SIZE_WINDOW_X 300
+#define SIZE_WINDOW_Y 300
 
 class Simulation
 {
@@ -21,7 +23,8 @@ private:
 	sf::Vector2i mouseViewPos;
 	sf::Vector2i mouseSimViewPos;
 
-	int *worldSize ;
+	sf::Vector2i worldSize;
+
 
 	Menu *menu; //menu opcji
 	World *world;
@@ -70,6 +73,8 @@ public:
 	/// aktualizuje zmienna dt o czas jaki jest potrzebny do wygenerowania klatki
 	/// </summary>
 	void updateDt();
+
+	void worldSizeWindow();
 
 };
 
