@@ -119,18 +119,15 @@ void World::update()
 			
 			if (worms[i]->eaten > 7 && worms[i]->isMature() && is2Worms)
 			{
-				worms[i]->layEggs(i, countNewWorms);
+				worms[i]->layEggs(countNewWorms);
 			}
 			
-			
-			//std::cout << worms[i]->eaten << std::endl;
 
 
 			if (worms[i]->wormDeath()) // sprawdzam czy robak osi¹gn¹ max wiek
 			{
 				delete worms[i] ;
 				worms.erase(worms.begin() + i);
-				//worms.resize(worms.size() - 1);
 			}
 			if (hungerTimer.getElapsedTime().asSeconds() > hungerSpan)
 			{
@@ -197,18 +194,6 @@ void World::drawWorld(sf::RenderWindow* window,float dt)
 	}
 
 }
-
-void World::worldReSize(int x, int y)
-{
-
-	xWorldSize = x;
-	yWorldSize = y;
-
-	floorInit();
-
-	wormsInit();
-}
-
 
 void World::updateVariable()
 {

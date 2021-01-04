@@ -14,25 +14,25 @@ class Simulation
 private:
 
 	//zmienne
-	sf::RenderWindow* window; //okno symulacji
-	sf::RenderWindow* optionWindow; // okno opcji 
-	sf::Event sfEvent; //fsml event
+	sf::RenderWindow* window; ///okno symulacji
+	sf::RenderWindow* optionWindow; /// okno opcji 
+	sf::Event sfEvent; /// fsml event
 
-	sf::View view;
+	sf::View view; ///widok okna symulacji
 
-	sf::Vector2i mouseViewPos;
-	sf::Vector2i mouseSimViewPos;
+	sf::Vector2i mouseViewPos; ///pozycja myszki na oknie opcji
+	sf::Vector2i mouseSimViewPos; /// pozycja myszki w oknie symulacji
 
-	sf::Vector2i worldSize;
+	sf::Vector2i worldSize; /// wielkoœæ œwiata symulacji
 
 
-	Menu *menu; //menu opcji
-	World *world;
-	variable* data;
+	Menu *menu; ///menu opcji
+	World *world; /// œwiat symulacji
+	variable* data; /// zmienne odzia³uj¹ce na symulacje na bierz¹co
 
 	// delta time 
-	sf::Clock dtClock; // delta time clock
-	float dt; // deltaTime
+	sf::Clock dtClock; /// zegar delta time 
+	float dt; /// deltaTime
 
 
 	/// <summary>
@@ -74,6 +74,9 @@ public:
 	/// </summary>
 	void updateDt();
 
+	/// <summary>
+	/// inicjowanie poierwszego okna symylacji do wyboru rozmiaru œwiata
+	/// </summary>
 	void worldSizeWindow();
 
 };

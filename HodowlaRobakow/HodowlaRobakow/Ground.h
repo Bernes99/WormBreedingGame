@@ -9,9 +9,8 @@ protected:
 	sf::RectangleShape ground; /// kszta≥t podloza
 	float maxFood=100; /// max ilosc jedzenia na podlozu
 	float food=maxFood; /// obecna ilosc jedzenia na podlozu
-	//float restoreSpeed = 1;
 	
-	variable *data;
+	variable *data; /// wskaünik na zmienne odzia≥ujπce na symulacje na bierzπco
 
 public:
 	/// <summary>
@@ -43,6 +42,9 @@ public:
 	/// </summary>
 	void restoreFood();
 
+	/// <summary>
+	/// aktualizuje zmienne odzia≥ujπce na symulacje na bierzπco
+	/// </summary>
 	void updateValues();
 };
 

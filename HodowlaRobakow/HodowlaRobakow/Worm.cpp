@@ -257,7 +257,7 @@ bool Worm::isMature()
 }
 
 
-void Worm::layEggs(int i, int count)
+void Worm::layEggs(int count)
 {
 	if (leyEggTimer.getElapsedTime().asSeconds() >leyEggSpan)
 	{

@@ -1,7 +1,6 @@
 #pragma once
 
 
-
 #include "Creature.h"
 #include "Eggs.h"
 
@@ -9,45 +8,38 @@
 class Worm : public Creature
 {
 private:
-	//sf::RectangleShape checker;//obiekt porzebny do sprawdzania kolizji z pod³og¹
-	
-	int maxScale; // maksymalny rozmiar jaki moze urosn¹æ robak
 
-	variable* data;
-	
-	sf::Clock timer; // zegar odpowiedzialny za zatrzymywanie sie robaków w miejscu
-	float howLongStay = 2.0f; // jak d³ugo robak stoi w miejscu
+	int maxScale; /// maksymalny rozmiar jaki moze urosn¹æ robak
 
-	bool allowMove = true; // czy robak moze sie poruszaæ
-	bool isPrevRight; ///czy robak poprzednio porusza³ sie w prawo
-	//sf::Time elapseTime;
+	variable* data; /// wskaŸnik na zmienne odzia³uj¹ce na symulacje na bierz¹co 
 	
-	bool allowRandom = false; //czy pozwolic na losowanie pozycji
-	float xMove; // wylosowana pozycja x do której porusza sie robak
-	float prevX=0; // poprzedna wylosowana pozycja x
-	float yMove; // wylosowana pozycja y do której porusza sie robak
-	float prevY = 0;// poprzedna wylosowana pozycja y
+	sf::Clock timer; /// zegar odpowiedzialny za zatrzymywanie sie robaków w miejscu
+	float howLongStay = 2.0f; /// jak d³ugo robak stoi w miejscu
+
+	bool allowMove = true; /// czy robak moze sie poruszaæ
+	bool isPrevRight; /// czy robak poprzednio porusza³ sie w prawo
+	
+	bool allowRandom = false; ///czy pozwolic na losowanie pozycji
+	float xMove; /// wylosowana pozycja x do której porusza sie robak
+	float prevX=0; /// poprzedna wylosowana pozycja x
+	float yMove; /// wylosowana pozycja y do której porusza sie robak
+	float prevY = 0;/// poprzedna wylosowana pozycja y
 
 	float speed = 100.f;/// predkosc poruszania sie robaka
 
-	float notMature; // % zycie gdy robak sie nie rozmanaz
+	float notMature; /// % zycie gdy robak sie nie rozmanaz
 
-	bool hungerDie = false; //czy robak przymiera g³odem
-	sf::Clock hungerTimer; //czas jaki robak przymiera glodem
-	float maxHungerTime; // maksymalny czas na g³odzie 
+	bool hungerDie = false; /// czy robak przymiera g³odem
+	sf::Clock hungerTimer; /// czas jaki robak przymiera glodem
+	float maxHungerTime; /// maksymalny czas na g³odzie 
 
-	std::vector <Eggs*>* eggs; ///wskaŸnik do przekazywania vektora jajek
+	std::vector <Eggs*>* eggs; /// wskaŸnik do przekazywania vektora jajek
 
-	float eggIncubate; //ile jajko bedzie sie wykluwaæ 
+	float eggIncubate; /// ile jajko bedzie sie wykluwaæ 
 
-	
-protected:
-	
-	
-	
 public:
-	float eaten=3.f; // zjedzone jedzenie
-	sf::Clock leyEggTimer; /// zegar odpowiedzialny za czas skladania jaja
+	float eaten=3.f; /// aktualnie zjedzone jedzenie
+	sf::Clock leyEggTimer; /// zegar odpowiedzialny za czas sk³adania jaja
 	float leyEggSpan; /// odstep pomiêdzy mozliwoscia kolejnego jajka
 
 
@@ -90,11 +82,23 @@ public:
 	/// <returns> zwraca prawde jezeli robak przekroczy³ max d³ugoœæ zycia</returns>
 	bool wormDeath();
 
-	
+	/// <summary>
+	/// sprawdza czy robak jest doros³y
+	/// </summary>
+	/// <returns> zwraca prawdê jezeli robak jest doras³y, fa³sz je¿eli nie jest </returns>
 	bool isMature();
 
-	void layEggs(int i, int count);
 
+	/// <summary>
+	/// spawnuije jajko na pozycji robaka o ile czas od ostatniego jaja nie jest zbyt ma³y
+	/// </summary>
+	/// <param name="count"> - liczba robaków z jednego jaja</param>
+	void layEggs(int count);
+
+
+	/// <summary>
+	/// aktualizuje zmienne odzia³uj¹ce na symulacje na bierz¹co 
+	/// </summary>
 	void updateVariable();
 };
 
