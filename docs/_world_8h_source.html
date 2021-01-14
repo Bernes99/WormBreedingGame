@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HodowlaRobaków - dokomentacja: Plik źródłowy HodowlaRobakow/World.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="worm.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HodowlaRobaków - dokomentacja
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_world_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">World.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_world_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ground_8h.html">Ground.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_worm_8h.html">Worm.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_eggs_8h.html">Eggs.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_world.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_world.html">World</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_world.html#a9cc615bbbf79c514b93eef791cb29574">   14</a></span>&#160;    std::vector&lt;std::vector&lt;Ground*&gt;&gt; <a class="code" href="class_world.html#a9cc615bbbf79c514b93eef791cb29574">floor</a>; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_world.html#a2b27038e7bffcfb99773f46d7fd18686">   16</a></span>&#160;    std::vector &lt;Worm*&gt; <a class="code" href="class_world.html#a2b27038e7bffcfb99773f46d7fd18686">worms</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_world.html#a1fc86baa4eb11806760b69a7fa990df0">   18</a></span>&#160;    std::vector &lt;Eggs*&gt; <a class="code" href="class_world.html#a1fc86baa4eb11806760b69a7fa990df0">eggs</a>; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_world.html#a27f819b6a78fed446d61880a7b4dcc76">   21</a></span>&#160;    std::vector&lt;Ground*&gt; <a class="code" href="class_world.html#a27f819b6a78fed446d61880a7b4dcc76">whereIsWorm</a>; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_world.html#ae894777a038749bee026100c5f76021a">   24</a></span>&#160;    <a class="code" href="structvariable.html">variable</a>* <a class="code" href="class_world.html#ae894777a038749bee026100c5f76021a">data</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_world.html#a551dc2bb7fd2aca3de1f4f8c91e7af97">   27</a></span>&#160;    sf::Clock <a class="code" href="class_world.html#a551dc2bb7fd2aca3de1f4f8c91e7af97">eatTimer</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_world.html#a4ad05949c36e20cb25d0ac318e91c464">   30</a></span>&#160;    sf::Clock <a class="code" href="class_world.html#a4ad05949c36e20cb25d0ac318e91c464">groundTimer</a>; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_world.html#adfc28daa5f90ae6f9bc297985d21d566">   33</a></span>&#160;    sf::Clock <a class="code" href="class_world.html#adfc28daa5f90ae6f9bc297985d21d566">hungerTimer</a>; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_world.html#a724574807aaae670b1635619aad31ae2">   35</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_world.html#a724574807aaae670b1635619aad31ae2">hungerSpan</a>; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_world.html#a7ea9e304183cd9ebc69fd814fa761b16">   38</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_world.html#a7ea9e304183cd9ebc69fd814fa761b16">eatSpeed</a>; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_world.html#ae3a07c85fe6a1e327ea720229dd3c6b0">   41</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_world.html#ae3a07c85fe6a1e327ea720229dd3c6b0">restoreFoodTime</a>; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#af988e4689f20ba29fdb2d1fd5b2abc26">floorInit</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#a0769a9faab1134e0c198e9d58f4cfe46">wormsInit</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_world.html#aeb68bd4c16a11d0f04d90043bc3aecc6">   54</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_world.html#aeb68bd4c16a11d0f04d90043bc3aecc6">xWorldSize</a>; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_world.html#a24b9c8de214dfc5bba688145d1f8c698">   56</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_world.html#a24b9c8de214dfc5bba688145d1f8c698">yWorldSize</a>; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_ground.html">Ground</a>* <a class="code" href="class_world.html#ae1bbb641627032497cc20e9f3db6479b">checker</a>(<span class="keywordtype">int</span> wormNumber);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="class_worm.html">Worm</a>* <a class="code" href="class_world.html#a08495414c8b5ca62a88ca1c8278ca0fd">foodEaten</a>(<span class="keywordtype">int</span> wormNumber);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_world.html#a8ba84cd8969b55722a4bcb65fb0c5c76">   75</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_world.html#a8ba84cd8969b55722a4bcb65fb0c5c76">countNewWorms</a>;  </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_world.html#abe51e3cb89b8cd224274b1d2ff7a730e">World</a>(sf::Vector2i worldSize, <a class="code" href="structvariable.html">variable</a>* <a class="code" href="class_world.html#ae894777a038749bee026100c5f76021a">data</a>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="class_world.html#a8c73fba541a5817fff65147ba47cd827">~World</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">update</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#aa43282fd5ecd57a8292f06644e521b0c">drawWorld</a>(sf::RenderWindow* window,<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#a4a366eea9125aa0c6a33a350043fa683">updateVariable</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#a3c04e73f1b72cd6a52f0e7bc4a417ea7">isClicked</a>(sf::Vector2i mousePos);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="ttc" id="a_eggs_8h_html"><div class="ttname"><a href="_eggs_8h.html">Eggs.h</a></div></div>
+<div class="ttc" id="a_ground_8h_html"><div class="ttname"><a href="_ground_8h.html">Ground.h</a></div></div>
+<div class="ttc" id="a_worm_8h_html"><div class="ttname"><a href="_worm_8h.html">Worm.h</a></div></div>
+<div class="ttc" id="aclass_ground_html"><div class="ttname"><a href="class_ground.html">Ground</a></div><div class="ttdef"><b>Definition:</b> <a href="_ground_8h_source.html#l00006">Ground.h:7</a></div></div>
+<div class="ttc" id="aclass_world_html"><div class="ttname"><a href="class_world.html">World</a></div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00011">World.h:12</a></div></div>
+<div class="ttc" id="aclass_world_html_a0769a9faab1134e0c198e9d58f4cfe46"><div class="ttname"><a href="class_world.html#a0769a9faab1134e0c198e9d58f4cfe46">World::wormsInit</a></div><div class="ttdeci">void wormsInit()</div><div class="ttdoc">inicjuje startowe robaki w symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00024">World.cpp:24</a></div></div>
+<div class="ttc" id="aclass_world_html_a08495414c8b5ca62a88ca1c8278ca0fd"><div class="ttname"><a href="class_world.html#a08495414c8b5ca62a88ca1c8278ca0fd">World::foodEaten</a></div><div class="ttdeci">Worm * foodEaten(int wormNumber)</div><div class="ttdoc">zwiększa zmienna odpowiedzialna za ilosc pozywiena jaka zjadl robak oraz wywoluje funkcje zwiekszajac...</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00052">World.cpp:52</a></div></div>
+<div class="ttc" id="aclass_world_html_a1fc86baa4eb11806760b69a7fa990df0"><div class="ttname"><a href="class_world.html#a1fc86baa4eb11806760b69a7fa990df0">World::eggs</a></div><div class="ttdeci">std::vector&lt; Eggs * &gt; eggs</div><div class="ttdoc">wektor jajek</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00018">World.h:18</a></div></div>
+<div class="ttc" id="aclass_world_html_a24b9c8de214dfc5bba688145d1f8c698"><div class="ttname"><a href="class_world.html#a24b9c8de214dfc5bba688145d1f8c698">World::yWorldSize</a></div><div class="ttdeci">int yWorldSize</div><div class="ttdoc">rozmiar y planszy symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00056">World.h:56</a></div></div>
+<div class="ttc" id="aclass_world_html_a27f819b6a78fed446d61880a7b4dcc76"><div class="ttname"><a href="class_world.html#a27f819b6a78fed446d61880a7b4dcc76">World::whereIsWorm</a></div><div class="ttdeci">std::vector&lt; Ground * &gt; whereIsWorm</div><div class="ttdoc">vektor pomocniczy który przechowuje podłoża na których w danej klatce stoją robaki</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00021">World.h:21</a></div></div>
+<div class="ttc" id="aclass_world_html_a2b27038e7bffcfb99773f46d7fd18686"><div class="ttname"><a href="class_world.html#a2b27038e7bffcfb99773f46d7fd18686">World::worms</a></div><div class="ttdeci">std::vector&lt; Worm * &gt; worms</div><div class="ttdoc">vektor robaków</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00016">World.h:16</a></div></div>
+<div class="ttc" id="aclass_world_html_a3c04e73f1b72cd6a52f0e7bc4a417ea7"><div class="ttname"><a href="class_world.html#a3c04e73f1b72cd6a52f0e7bc4a417ea7">World::isClicked</a></div><div class="ttdeci">void isClicked(sf::Vector2i mousePos)</div><div class="ttdoc">sprawdza czy podana pozycja myszki zawiera sie w świecie symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00206">World.cpp:206</a></div></div>
+<div class="ttc" id="aclass_world_html_a4a366eea9125aa0c6a33a350043fa683"><div class="ttname"><a href="class_world.html#a4a366eea9125aa0c6a33a350043fa683">World::updateVariable</a></div><div class="ttdeci">void updateVariable()</div><div class="ttdoc">funkcja aktualizuje zmienne odziałujące na symulacje na bierząco</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00198">World.cpp:198</a></div></div>
+<div class="ttc" id="aclass_world_html_a4ad05949c36e20cb25d0ac318e91c464"><div class="ttname"><a href="class_world.html#a4ad05949c36e20cb25d0ac318e91c464">World::groundTimer</a></div><div class="ttdeci">sf::Clock groundTimer</div><div class="ttdoc">zegar odpowiedzialny za odnawianie sie jedzneia na powierzchni</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00030">World.h:30</a></div></div>
+<div class="ttc" id="aclass_world_html_a551dc2bb7fd2aca3de1f4f8c91e7af97"><div class="ttname"><a href="class_world.html#a551dc2bb7fd2aca3de1f4f8c91e7af97">World::eatTimer</a></div><div class="ttdeci">sf::Clock eatTimer</div><div class="ttdoc">zegar odpowiadajacy za za obliczannie przerwy miedzy jedzeniem przez robaka</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00027">World.h:27</a></div></div>
+<div class="ttc" id="aclass_world_html_a724574807aaae670b1635619aad31ae2"><div class="ttname"><a href="class_world.html#a724574807aaae670b1635619aad31ae2">World::hungerSpan</a></div><div class="ttdeci">float hungerSpan</div><div class="ttdoc">dostęp czasu w sekundach między spadkiem najedzenia robaka</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00035">World.h:35</a></div></div>
+<div class="ttc" id="aclass_world_html_a7ea9e304183cd9ebc69fd814fa761b16"><div class="ttname"><a href="class_world.html#a7ea9e304183cd9ebc69fd814fa761b16">World::eatSpeed</a></div><div class="ttdeci">float eatSpeed</div><div class="ttdoc">predkosc z jak jedzą robaki</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00038">World.h:38</a></div></div>
+<div class="ttc" id="aclass_world_html_a8ba84cd8969b55722a4bcb65fb0c5c76"><div class="ttname"><a href="class_world.html#a8ba84cd8969b55722a4bcb65fb0c5c76">World::countNewWorms</a></div><div class="ttdeci">int countNewWorms</div><div class="ttdoc">ilosc robaków z 1 jajka</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00075">World.h:75</a></div></div>
+<div class="ttc" id="aclass_world_html_a8c73fba541a5817fff65147ba47cd827"><div class="ttname"><a href="class_world.html#a8c73fba541a5817fff65147ba47cd827">World::~World</a></div><div class="ttdeci">~World()</div><div class="ttdoc">zwalnia wzkaxniki na podloze i robaki w wektorach</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00074">World.cpp:74</a></div></div>
+<div class="ttc" id="aclass_world_html_a9cc615bbbf79c514b93eef791cb29574"><div class="ttname"><a href="class_world.html#a9cc615bbbf79c514b93eef791cb29574">World::floor</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; Ground * &gt; &gt; floor</div><div class="ttdoc">vektor vektrów podłoża</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00014">World.h:14</a></div></div>
+<div class="ttc" id="aclass_world_html_aa43282fd5ecd57a8292f06644e521b0c"><div class="ttname"><a href="class_world.html#aa43282fd5ecd57a8292f06644e521b0c">World::drawWorld</a></div><div class="ttdeci">void drawWorld(sf::RenderWindow *window, float dt)</div><div class="ttdoc">rysowanie swiata</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00171">World.cpp:171</a></div></div>
+<div class="ttc" id="aclass_world_html_aac8c1fde63c06577ffc648aaefdb37f0"><div class="ttname"><a href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">World::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">aktualizuje stan swiata</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00093">World.cpp:93</a></div></div>
+<div class="ttc" id="aclass_world_html_abe51e3cb89b8cd224274b1d2ff7a730e"><div class="ttname"><a href="class_world.html#abe51e3cb89b8cd224274b1d2ff7a730e">World::World</a></div><div class="ttdeci">World(sf::Vector2i worldSize, variable *data)</div><div class="ttdoc">konstruktor ustawiający do zmiennych rozmiar świata i zmiene działające na symulacje oraz wywołuje in...</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00059">World.cpp:59</a></div></div>
+<div class="ttc" id="aclass_world_html_adfc28daa5f90ae6f9bc297985d21d566"><div class="ttname"><a href="class_world.html#adfc28daa5f90ae6f9bc297985d21d566">World::hungerTimer</a></div><div class="ttdeci">sf::Clock hungerTimer</div><div class="ttdoc">zegar odpowiedzialny za czas skladania jaja</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00033">World.h:33</a></div></div>
+<div class="ttc" id="aclass_world_html_ae1bbb641627032497cc20e9f3db6479b"><div class="ttname"><a href="class_world.html#ae1bbb641627032497cc20e9f3db6479b">World::checker</a></div><div class="ttdeci">Ground * checker(int wormNumber)</div><div class="ttdoc">sprawdza ktrórego fragmentu podłogi dotyka robak</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00035">World.cpp:35</a></div></div>
+<div class="ttc" id="aclass_world_html_ae3a07c85fe6a1e327ea720229dd3c6b0"><div class="ttname"><a href="class_world.html#ae3a07c85fe6a1e327ea720229dd3c6b0">World::restoreFoodTime</a></div><div class="ttdeci">float restoreFoodTime</div><div class="ttdoc">szybkosc odnawiania sie podloza</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00041">World.h:41</a></div></div>
+<div class="ttc" id="aclass_world_html_ae894777a038749bee026100c5f76021a"><div class="ttname"><a href="class_world.html#ae894777a038749bee026100c5f76021a">World::data</a></div><div class="ttdeci">variable * data</div><div class="ttdoc">wskaźnik na zmienne odziałujące na symulacje na bierząco</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00024">World.h:24</a></div></div>
+<div class="ttc" id="aclass_world_html_aeb68bd4c16a11d0f04d90043bc3aecc6"><div class="ttname"><a href="class_world.html#aeb68bd4c16a11d0f04d90043bc3aecc6">World::xWorldSize</a></div><div class="ttdeci">int xWorldSize</div><div class="ttdoc">rozmiar x planszy symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00054">World.h:54</a></div></div>
+<div class="ttc" id="aclass_world_html_af988e4689f20ba29fdb2d1fd5b2abc26"><div class="ttname"><a href="class_world.html#af988e4689f20ba29fdb2d1fd5b2abc26">World::floorInit</a></div><div class="ttdeci">void floorInit()</div><div class="ttdoc">inicjalizuje podłoże symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00006">World.cpp:6</a></div></div>
+<div class="ttc" id="aclass_worm_html"><div class="ttname"><a href="class_worm.html">Worm</a></div><div class="ttdef"><b>Definition:</b> <a href="_worm_8h_source.html#l00008">Worm.h:9</a></div></div>
+<div class="ttc" id="astructvariable_html"><div class="ttname"><a href="structvariable.html">variable</a></div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00002">data.h:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_0aa469a7598a1e33e25a61cc13905763.html">HodowlaRobakow</a></li><li class="navelem"><a class="el" href="_world_8h.html">World.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
+  </ul>
+</div>
+</body>
+</html>
