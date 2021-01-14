@@ -5,6 +5,12 @@ class Eggs :
 {
 public:
 
+    /// <summary>
+    /// ³aduje obrazek jajka, ustawia pozycje oraz d³ugoœæ wykluwania jajka
+    /// </summary>
+    /// <param name="positionX"> - pozycja x robaka</param>
+    /// <param name="positionY"> - pozycja y robaka</param>
+    /// <param name="lifeTime"> - czas wykluwania sie jajka</param>
     Eggs(int positionX,int positionY,float lifeTime);
 
     /// <summary>

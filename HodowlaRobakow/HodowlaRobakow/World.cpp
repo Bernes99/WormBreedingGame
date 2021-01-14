@@ -23,7 +23,7 @@ void World::floorInit()
 
 void World::wormsInit()
 {
-	for (int i = 0; i < 7; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		worms.push_back(new Worm((int)floor[0][0]->getGround().getPosition().x,
 						(int)floor[0][0]->getGround().getPosition().y - (int)floor[0][0]->getGround().getSize().y, &eggs,data));
@@ -58,6 +58,8 @@ Worm* World::foodEaten(int wormNumber)
 
 World::World(sf::Vector2i worldSize, variable* data)
 {
+	
+
 	xWorldSize = worldSize.x;
 	yWorldSize = worldSize.y;
 
@@ -67,8 +69,6 @@ World::World(sf::Vector2i worldSize, variable* data)
 
 	wormsInit();
 
-	//std::cout << ;
-	//okreslenie nowego robaka oraz przypisanie mu pozycji
 }
 
 World::~World()
@@ -213,8 +213,7 @@ void World::isClicked(sf::Vector2i mousePos)
 		{
 			if (floor[i][j]->getGround().getGlobalBounds().contains(sf::Vector2f(mousePos)))
 			{
-				worms.push_back(new Worm(mousePos.x,mousePos.y, &eggs, data));
-
+				worms.push_back(new Worm(mousePos.x,mousePos.y-20, &eggs, data));
 			}
 		}
 	}

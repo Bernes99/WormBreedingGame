@@ -10,10 +10,14 @@ class Button : public sf::Drawable
 {
 
 private:
-	sf::RectangleShape button; /// kaszat³t przycisku
-	sf::Text text; /// tekst przycisku 
-	sf::Font font; /// font przycisk
-	float value=0; /// wartosc zmiennej
+	/// kaszat³t przycisku
+	sf::RectangleShape button; 
+	/// tekst przycisku 
+	sf::Text text; 
+	/// font przycisk
+	sf::Font font; 
+	/// wartosc zmiennej
+	float value=0; 
 
 	
 public:
@@ -22,7 +26,7 @@ public:
 	/// konstruktor ³aduj¹cy fonta
 	/// </summary>
 	Button();
-	//~Button();
+	
 
 	/// <summary>
 	/// ustawia przycisk jako przycisk dodawania

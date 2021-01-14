@@ -13,7 +13,7 @@ void Creature::loadSprite(std::string path)
 void Creature::setWormPosition(int positionX, int positionY)
 {
 	sprite.setPosition(positionX, positionY);
-	checker.setPosition(sprite.getPosition().x - sprite.getTexture()->getSize().x / 2,
+	checker.setPosition(sprite.getPosition().x + sprite.getTexture()->getSize().x / 2,
 		sprite.getPosition().y + 4 * sprite.getTexture()->getSize().y / 5);
 
 }

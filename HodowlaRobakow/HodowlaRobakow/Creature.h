@@ -12,11 +12,15 @@
 class Creature
 {
 protected:
-	sf::Texture texture; /// tekstura robaka
-	sf::Sprite sprite; ///obiekt robaka z tekstur¹
+	/// tekstura robaka
+	sf::Texture texture; 
+	///obiekt robaka z tekstur¹
+	sf::Sprite sprite; 
 
-	sf::Clock deathTime;/// zegar odlczajacy do œmeirci robaka
-	float maxLifeTime = 120.f; /// maxymalny czas zycia
+	/// zegar odlczajacy do œmeirci robaka
+	sf::Clock deathTime;
+	/// maxymalny czas zycia
+	float maxLifeTime = 120.f; 
 
 
 	/// <summary>
@@ -40,7 +44,8 @@ protected:
 
 public:
 	
-	sf::RectangleShape checker; ///punkt odniesienie dla robaka
+	///punkt odniesienie dla robaka
+	sf::RectangleShape checker; 
 
 	/// <summary>
 	/// zwraca sprita robaka

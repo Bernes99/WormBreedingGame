@@ -10,26 +10,35 @@
 
 class World
 {
-	std::vector<std::vector<Ground*>> floor; ///vektor vektrów pod³o¿a
-	std::vector <Worm*> worms; /// vektor robaków
-	std::vector <Eggs*> eggs; /// wektor jajek
+	///vektor vektrów pod³o¿a
+	std::vector<std::vector<Ground*>> floor; 
+	/// vektor robaków
+	std::vector <Worm*> worms; 
+	/// wektor jajek
+	std::vector <Eggs*> eggs; 
 	
+	/// vektor pomocniczy który przechowuje pod³o¿a na których w danej klatce stoj¹ robaki 
+	std::vector<Ground*> whereIsWorm; 
+
+	/// wskaŸnik na zmienne odzia³uj¹ce na symulacje na bierz¹co
+	variable* data; 
+
+	/// zegar odpowiadajacy za za obliczannie przerwy miedzy jedzeniem przez robaka
+	sf::Clock eatTimer; 
+
+	/// zegar odpowiedzialny za odnawianie sie jedzneia na powierzchni
+	sf::Clock groundTimer; 
 	
-	std::vector<Ground*> whereIsWorm; /// vektor pomocniczy który przechowuje pod³o¿a na których w danej klatce stoj¹ robaki 
+	/// zegar odpowiedzialny za czas skladania jaja
+	sf::Clock hungerTimer; 
+	/// dostêp czasu w sekundach miêdzy spadkiem najedzenia robaka
+	float hungerSpan; 
 
-	variable* data; /// wskaŸnik na zmienne odzia³uj¹ce na symulacje na bierz¹co
+	///predkosc z jak jedz¹ robaki
+	float eatSpeed; 
 
-
-	sf::Clock eatTimer; /// zegar odpowiadajacy za za obliczannie przerwy miedzy jedzeniem przez robaka
-
-	sf::Clock groundTimer; /// zegar odpowiedzialny za odnawianie sie jedzneia na powierzchni
-	
-	sf::Clock hungerTimer; /// zegar odpowiedzialny za czas skladania jaja
-	float hungerSpan; /// dostêp czasu w sekundach miêdzy spadkiem najedzenia robaka
-
-	float eatSpeed; ///predkosc z jak jedz¹ robaki
-
-	float restoreFoodTime; /// szybkosc odnawiania sie podloza
+	/// szybkosc odnawiania sie podloza
+	float restoreFoodTime; 
 
 	/// <summary>
 	/// inicjalizuje pod³o¿e symulacji
@@ -41,8 +50,10 @@ class World
 	/// </summary>
 	void wormsInit();
 
-	int xWorldSize; /// rozmiar x planszy symulacji
-	int yWorldSize; /// rozmiar y planszy symulacji
+	/// rozmiar x planszy symulacji
+	int xWorldSize; 
+	/// rozmiar y planszy symulacji
+	int yWorldSize; 
 
 	/// <summary>
 	/// sprawdza ktrórego fragmentu pod³ogi dotyka robak
@@ -60,8 +71,8 @@ class World
 	Worm* foodEaten(int wormNumber);
 protected:
 
-
-	int countNewWorms; /// ilosc robaków z 1 jajka 
+	/// ilosc robaków z 1 jajka
+	int countNewWorms;  
 
 public:
 
@@ -72,7 +83,9 @@ public:
 	/// <param name="data"> - wskaŸnik na strukture z zmiennymi oddzia³uj¹cymi na bie¿¹co ns symulacje</param>
 	World(sf::Vector2i worldSize, variable* data);
 
-	
+	/// <summary>
+	/// zwalnia wzkaxniki na podloze i robaki w wektorach
+	/// </summary>
 	~World();
 
 

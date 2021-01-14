@@ -9,38 +9,59 @@ class Worm : public Creature
 {
 private:
 
-	int maxScale; /// maksymalny rozmiar jaki moze urosn¹æ robak
+	/// maksymalny rozmiar jaki moze urosn¹æ robak
+	int maxScale; 
 
-	variable* data; /// wskaŸnik na zmienne odzia³uj¹ce na symulacje na bierz¹co 
+	/// wskaŸnik na zmienne odzia³uj¹ce na symulacje na bierz¹co
+	variable* data;  
 	
-	sf::Clock timer; /// zegar odpowiedzialny za zatrzymywanie sie robaków w miejscu
-	float howLongStay = 2.0f; /// jak d³ugo robak stoi w miejscu
+	/// zegar odpowiedzialny za zatrzymywanie sie robaków w miejscu
+	sf::Clock timer; 
+	/// jak d³ugo robak stoi w miejscu
+	float howLongStay = 2.0f; 
 
-	bool allowMove = true; /// czy robak moze sie poruszaæ
-	bool isPrevRight; /// czy robak poprzednio porusza³ sie w prawo
+	/// czy robak moze sie poruszaæ
+	bool allowMove = true; 
+	/// czy robak poprzednio porusza³ sie w prawo
+	bool isPrevRight; 
 	
-	bool allowRandom = false; ///czy pozwolic na losowanie pozycji
-	float xMove; /// wylosowana pozycja x do której porusza sie robak
-	float prevX=0; /// poprzedna wylosowana pozycja x
-	float yMove; /// wylosowana pozycja y do której porusza sie robak
-	float prevY = 0;/// poprzedna wylosowana pozycja y
+	///czy pozwolic na losowanie pozycji
+	bool allowRandom = false; 
+	/// wylosowana pozycja x do której porusza sie robak
+	float xMove; 
+	/// poprzedna wylosowana pozycja x
+	float prevX=0; 
+	/// wylosowana pozycja y do której porusza sie robak
+	float yMove;
+	/// poprzedna wylosowana pozycja y
+	float prevY = 0;
 
-	float speed = 100.f;/// predkosc poruszania sie robaka
+	/// predkosc poruszania sie robaka
+	float speed = 100.f;
 
-	float notMature; /// % zycie gdy robak sie nie rozmanaz
+	/// % zycie gdy robak sie nie rozmanaz
+	float notMature; 
 
-	bool hungerDie = false; /// czy robak przymiera g³odem
-	sf::Clock hungerTimer; /// czas jaki robak przymiera glodem
-	float maxHungerTime; /// maksymalny czas na g³odzie 
+	/// czy robak przymiera g³odem
+	bool hungerDie = false; 
+	/// czas jaki robak przymiera glodem
+	sf::Clock hungerTimer; 
+	/// maksymalny czas na g³odzie 
+	float maxHungerTime; 
 
-	std::vector <Eggs*>* eggs; /// wskaŸnik do przekazywania vektora jajek
+	/// wskaŸnik do przekazywania vektora jajek
+	std::vector <Eggs*>* eggs; 
 
-	float eggIncubate; /// ile jajko bedzie sie wykluwaæ 
+	/// ile jajko bedzie sie wykluwaæ 
+	float eggIncubate; 
 
 public:
-	float eaten=3.f; /// aktualnie zjedzone jedzenie
-	sf::Clock leyEggTimer; /// zegar odpowiedzialny za czas sk³adania jaja
-	float leyEggSpan; /// odstep pomiêdzy mozliwoscia kolejnego jajka
+	/// aktualnie zjedzone jedzenie
+	float eaten=3.f; 
+	/// zegar odpowiedzialny za czas sk³adania jaja
+	sf::Clock leyEggTimer; 
+	/// odstep pomiêdzy mozliwoscia kolejnego jajka
+	float leyEggSpan; 
 
 
 	/// <summary>
@@ -49,7 +70,9 @@ public:
 	/// <param name="windowSizeX">okno w którym porusza sie robak(takie samo jak rysowanie)</param>
 	void movment(int worldSizeX,int worldSizeY,float dt);
 	
-	
+	/// <summary>
+	/// konstruktor domyslny
+	/// </summary>
 	Worm() = default;
 
 	/// <summary>
@@ -59,9 +82,6 @@ public:
 	/// <param name="wormPosY">startowa pozycja y robaka</param>
 	Worm(int wormPosX,int wormPosY, std::vector <Eggs*>* egg, variable* data);
 
-	~Worm();
-
-	
 
 	/// <summary>
 	/// sprawdza czy robak zjad³ dostatecznie duzo jedzenia

@@ -1,2 +1,209 @@
-﻿  Simulation.cpp
+﻿  Button.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(26,46): warning C4244: "argument": konwersja z "unsigned int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(43,45): warning C4244: "argument": konwersja z "unsigned int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(49,37): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(49,34): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(100,35): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Button.cpp(100,32): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+  Creature.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Creature.cpp(15,32): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Creature.cpp(15,21): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  Eggs.cpp
+  Ground.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Ground.cpp(16,37): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Ground.cpp(16,34): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+  main.cpp
+  Menu.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(57,121): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(57,71): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(66,44): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(65,82): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(73,44): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(72,82): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(91,117): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(91,71): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(102,62): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(102,24): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(121,117): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(121,69): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(130,44): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(129,82): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(137,44): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(136,82): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(182,115): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(182,70): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(474,73): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Menu.cpp(474,49): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+  Simulation.cpp
+  World.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(16,12): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(15,38): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(85,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(99,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(104,40): warning C4244: "argument": konwersja z "float" do "int", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(141,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(146,43): warning C4244: "argument": konwersja z "const T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(145,67): warning C4244: "argument": konwersja z "const T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(181,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(184,15): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(183,31): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(191,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(202,22): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+  Worm.cpp
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(18,19): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(21,20): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(24,19): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(27,20): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(35,10): warning C4244: "inicjowanie": konwersja z "const T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(48,11): warning C4244: "inicjowanie": konwersja z "const T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(162,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(273,32): warning C4244: "argument": konwersja z "const T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(272,56): warning C4244: "argument": konwersja z "const T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\Worm.cpp(286,17): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
+  Generowanie kodu...
+D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\HodowlaRobakow\World.cpp(50): warning C4715: "World::checker”: niewszystkie ścieżki kodu zwracają wartość
   HodowlaRobakow.vcxproj -> D:\Projekty\C++ projekt\ProjektHodowlaRobakow\HodowlaRobakow\Debug\HodowlaRobakow.exe

@@ -6,11 +6,15 @@
 class Ground
 {
 protected:
-	sf::RectangleShape ground; /// kszta≥t podloza
-	float maxFood=100; /// max ilosc jedzenia na podlozu
-	float food=maxFood; /// obecna ilosc jedzenia na podlozu
+	/// kszta≥t podloza
+	sf::RectangleShape ground; 
+	/// max ilosc jedzenia na podlozu
+	float maxFood=100; 
+	/// obecna ilosc jedzenia na podlozu
+	float food=maxFood; 
 	
-	variable *data; /// wskaünik na zmienne odzia≥ujπce na symulacje na bierzπco
+	/// wskaünik na zmienne odzia≥ujπce na symulacje na bierzπco
+	variable *data; 
 
 public:
 	/// <summary>

@@ -15,10 +15,10 @@ void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 			xMove = 0;
 			yMove = 0;
 
-			xMove = rand() % (worldSizeX  - sprite.getTexture()->getSize().x/2 );
+			xMove = rand() % (worldSizeX   -5);
 			while (prevX == xMove)
 			{
-				xMove = rand() % (worldSizeX  - sprite.getTexture()->getSize().x / 2  );
+				xMove = rand() % (worldSizeX  -5 );
 			}
 
 			yMove = rand() % (worldSizeY  );
@@ -63,8 +63,8 @@ void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 		if (checker.getPosition().x > worldSizeX )
 		{
 			//std::cout << sprite.getPosition().x;
-			sprite.move(-2, 0);
-			checker.move(-2, 0);
+			sprite.move(-4, 0);
+			checker.move(-4, 0);
 			allowRandom = true;
 			//sprite.move(0, 0);
 		}
@@ -73,8 +73,8 @@ void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 		else if (checker.getPosition().y > worldSizeY )
 		{
 			//std::cout << sprite.getPosition().x;
-			sprite.move(0, -2);
-			checker.move(0, -2);
+			sprite.move(0, -4);
+			checker.move(0, -4);
 			allowRandom = true;
 			//sprite.move(0, 0);
 		}
@@ -83,8 +83,8 @@ void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 		else if (checker.getPosition().y <0)
 		{
 			//std::cout << sprite.getPosition().x;
-			sprite.move(0, 2);
-			checker.move(0, 2);
+			sprite.move(0, 4);
+			checker.move(0, 4);
 			allowRandom = true;
 			//sprite.move(0, 0);
 		}
@@ -92,9 +92,9 @@ void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 		/*zabezpieczenie wyjscia poza plansze z lewej*/
 		else if (checker.getPosition().x < 0)
 		{
-			std::cout << sprite.getPosition().x;
-			sprite.move(2, 0);
-			checker.move(2, 0);
+			//std::cout << sprite.getPosition().x;
+			sprite.move(4, 0);
+			checker.move(4, 0);
 			allowRandom = true;
 			//sprite.move(0, 0);
 		}
@@ -103,26 +103,31 @@ void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 		else if (checker.getPosition().x > xMove+0.5f || checker.getPosition().x < xMove - 0.5f||
 			checker.getPosition().y > yMove + 0.5f || checker.getPosition().y < yMove - 0.5f)
 		{
-			if (checker.getPosition().x < xMove)
+
+			if (dt*speed< worldSizeX && dt*speed < (worldSizeY - sprite.getTexture()->getSize().y / 2))
 			{
-				sprite.move(speed * dt, 0);
-				checker.move(speed * dt, 0);
+				if (checker.getPosition().x < xMove)
+				{
+					sprite.move(speed * dt, 0);
+					checker.move(speed * dt, 0);
+				}
+				else
+				{
+					sprite.move(-speed * dt, 0);
+					checker.move(-speed * dt, 0);
+				}
+				if (checker.getPosition().y < yMove)
+				{
+					sprite.move(0, speed * dt);
+					checker.move(0, speed * dt);
+				}
+				else
+				{
+					sprite.move(0, -speed * dt);
+					checker.move(0, -speed * dt);
+				}
 			}
-			else
-			{
-				sprite.move(-speed * dt, 0);
-				checker.move(-speed * dt, 0);
-			}
-			if (checker.getPosition().y < yMove)
-			{
-				sprite.move(0,speed * dt);
-				checker.move(0, speed * dt);
-			}
-			else
-			{
-				sprite.move(0, -speed * dt);
-				checker.move(0, -speed * dt);
-			}
+			
 			
 			//std::cout << dt << std::endl;
 		}
@@ -130,6 +135,7 @@ void Worm::movment(int worldSizeX, int worldSizeY,float dt)
 		else
 		{
 			sprite.move(0, 0);
+			checker.move(0, 0);
 			allowMove = false;
 			timer.restart();	
 			allowRandom = true;
@@ -155,26 +161,23 @@ Worm::Worm(int wormPosX, int wormPosY, std::vector <Eggs*>* egg, variable* data)
 
 	srand(time(NULL));
 	allowRandom = true;
-	sprite.setPosition(wormPosX, wormPosY);
-	
+	//sprite.setPosition(wormPosX, wormPosY);
+	setWormPosition(wormPosX, wormPosY);
 
 	xMove = sprite.getPosition().x;
 	yMove = sprite.getPosition().y;
 
 	checker.setSize(sf::Vector2f(1,1));
-	checker.setPosition(sprite.getPosition().x - sprite.getTexture()->getSize().x / 2,
-						sprite.getPosition().y + 4*sprite.getTexture()->getSize().y/5);
+	//checker.setPosition(wormPosX - sprite.getTexture()->getSize().x / 2,
+						//wormPosY + 4*sprite.getTexture()->getSize().y/5);
 	
 	timer.restart();
 	
 	checker.setFillColor(sf::Color::Blue);
-	checkerFixPosition();
+	//checkerFixPosition();
 }
 
-Worm::~Worm()
-{
 
-}
 
 
 
@@ -223,7 +226,7 @@ bool Worm::wormDeath()
 	{
 		return true;
 	}
-	else if(deathTime.getElapsedTime().asSeconds() > maxLifeTime*0.90f)
+	else if(deathTime.getElapsedTime().asSeconds() >= maxLifeTime*0.90f)
 	{
 		sprite.setColor(sf::Color(255,0,0));
 	}

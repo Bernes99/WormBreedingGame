@@ -13,41 +13,56 @@ class Simulation
 {
 private:
 
-	//zmienne
-	sf::RenderWindow* window; ///okno symulacji
-	sf::RenderWindow* optionWindow; /// okno opcji 
-	sf::Event sfEvent; /// fsml event
+	
+	///okno symulacji
+	sf::RenderWindow* window; 
+	/// okno opcji 
+	sf::RenderWindow* optionWindow; 
+	/// fsml event
+	sf::Event sfEvent; 
 
-	sf::View view; ///widok okna symulacji
+	///widok okna symulacji
+	sf::View view; 
+	///pozycja myszki na oknie opcji
+	sf::Vector2i mouseViewPos; 
+	/// pozycja myszki w oknie symulacji
+	sf::Vector2i mouseSimViewPos; 
 
-	sf::Vector2i mouseViewPos; ///pozycja myszki na oknie opcji
-	sf::Vector2i mouseSimViewPos; /// pozycja myszki w oknie symulacji
+	/// wielkoœæ œwiata symulacji
+	sf::Vector2i worldSize;
 
-	sf::Vector2i worldSize; /// wielkoœæ œwiata symulacji
+	///menu opcji
+	Menu *menu; 
+	/// œwiat symulacji
+	World *world; 
+	/// zmienne odzia³uj¹ce na symulacje na bierz¹co
+	variable* data; 
 
-
-	Menu *menu; ///menu opcji
-	World *world; /// œwiat symulacji
-	variable* data; /// zmienne odzia³uj¹ce na symulacje na bierz¹co
-
-	// delta time 
-	sf::Clock dtClock; /// zegar delta time 
-	float dt; /// deltaTime
+	/// zegar delta time 
+	sf::Clock dtClock; 
+	/// deltaTime
+	float dt; 
 
 
 	/// <summary>
-	/// inicjalizacja obu okien
+	/// tworz¹cy okna œwiata i opcji, ³aduje tez ikone, zmienne zmieniane z menu opcji oraz ustawia widok wyœwietlanej planszy
 	/// </summary>
 	void initWindow();
 
 
 public:
 
-	// kosntruktor / dekonstruktor
+	/// <summary>
+	/// wywo³uje metode do inicjalizacji okien i œwiata
+	/// </summary>
 	Simulation();
+
+	/// <summary>
+	/// zwalnia wskaŸniki na oba okna symulacji oraz usuwa menu i zmienne zmieniane z tego menu
+	/// </summary>
 	virtual ~Simulation();
 
-	//funkcje
+	
 
 	/// <summary>
 	/// aktualizowanie zdazen obsblugujacych grafike

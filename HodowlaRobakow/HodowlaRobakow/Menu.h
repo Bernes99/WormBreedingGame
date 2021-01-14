@@ -7,7 +7,8 @@
 class Menu
 {
 private:
-	variable* data; /// wskaŸnik na zmienne odzia³uj¹ce na symulacje na bierz¹co 
+	/// wskaŸnik na zmienne odzia³uj¹ce na symulacje na bierz¹co 
+	variable* data; 
 
 	/// <summary>
 	/// inicjalizacja przycisków ca³ego menu
@@ -19,9 +20,12 @@ private:
 	/// </summary>
 	void initWorldSizeButtons();
 	
-	int setsNumber = 11; /// liczba zestawów przycisków do zmiennych
-	std::vector<std::vector<Button*>> sets;/// tablica przycisków zestawów przycisków gdzie indeks 0 to zmienna ,1 to przycisk zwiekszania, 2 przycisk zmniejszania, 3 teks który mówi co to za zmienna
-	Button *send; /// przycisk potwierdzenia wielkoœci œwiata w pierwszym oknie symulacji
+	/// liczba zestawów przycisków do zmiennych
+	int setsNumber = 11; 
+	/// tablica przycisków zestawów przycisków gdzie indeks 0 to zmienna ,1 to przycisk zwiekszania, 2 przycisk zmniejszania, 3 teks który mówi co to za zmienna
+	std::vector<std::vector<Button*>> sets;
+	/// przycisk potwierdzenia wielkoœci œwiata w pierwszym oknie symulacji
+	Button *send; 
 	
 	/// <summary>
 	/// funkcaj inicjuje set 0 zmiennej przycisków 
