@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HodowlaRobaków - dokomentacja: Plik źródłowy HodowlaRobakow/Simulation.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="worm.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HodowlaRobaków - dokomentacja
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_simulation_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Simulation.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_simulation_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_simulation_8h.html">Simulation.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// fukncje inicjaliozujace</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="class_simulation.html#a690e5f5473f9a6a43d163b0f77040bdb">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_simulation.html#a690e5f5473f9a6a43d163b0f77040bdb">Simulation::initWindow</a>()</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a> = <span class="keyword">new</span> sf::RenderWindow(sf::VideoMode(<a class="code" href="_simulation_8h.html#a9de238be95ae60fb3c32c29fb9a596f9">SIM_WINDOW_X</a>,<a class="code" href="_simulation_8h.html#a5d81f924892356384391e89f82c1c460">SIM_WINDOW_Y</a> ), <span class="stringliteral">&quot;Symulacja Robaków&quot;</span>);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a> = <span class="keyword">new</span> sf::RenderWindow(sf::VideoMode(<a class="code" href="_simulation_8h.html#a3747a2e432fb3f538f2525b99597a13c">MENU_WINDOW_X</a>, <a class="code" href="_simulation_8h.html#a57ea41365f75d2a6533906b33c66e117">MENU_WINDOW_Y</a>), <span class="stringliteral">&quot;Symulacja Robaków Opcje&quot;</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;setPosition(sf::Vector2i(<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;getPosition().x - <a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;getSize().x/5,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;getPosition().y));</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a>-&gt;setPosition(sf::Vector2i(<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;getPosition().x + <a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;getSize().x,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;getPosition().y));</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    sf::Image icon;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (!icon.loadFromFile(<span class="stringliteral">&quot;../Resources/Textures/worm.png&quot;</span>))</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        std::cout&lt;&lt;<span class="stringliteral">&quot;nie zaladowano ikony&quot;</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a>-&gt;setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_simulation.html#afd31666b1d9a00c743c7d42813261436">data</a> = <span class="keyword">new</span> <a class="code" href="structvariable.html">variable</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_simulation.html#aba48abef9dfb9ea53d97d827bd2676ba">world</a> = <span class="keyword">new</span> <a class="code" href="class_world.html">World</a>(<a class="code" href="class_simulation.html#a1f28198b8a204cb4077479b6da0cdbf5">worldSize</a>, <a class="code" href="class_simulation.html#afd31666b1d9a00c743c7d42813261436">data</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">menu</a> = <span class="keyword">new</span> <a class="code" href="class_menu.html">Menu</a>(<a class="code" href="class_simulation.html#afd31666b1d9a00c743c7d42813261436">data</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_simulation.html#a64f8cce20978299d30489f957baaf4a3">view</a>.reset(sf::FloatRect(-50.f, -50.f, <a class="code" href="_simulation_8h.html#a9de238be95ae60fb3c32c29fb9a596f9">SIM_WINDOW_X</a>, <a class="code" href="_simulation_8h.html#a5d81f924892356384391e89f82c1c460">SIM_WINDOW_Y</a>));<span class="comment">// ustawienie vidoku na normalny przesunięty </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;setView(<a class="code" href="class_simulation.html#a64f8cce20978299d30489f957baaf4a3">view</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_simulation.html#a5b224cc5b36bcc8eb29689aff223de41">   33</a></span>&#160;<a class="code" href="class_simulation.html#a5b224cc5b36bcc8eb29689aff223de41">Simulation::Simulation</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#a253f512a1f61acb40da5aed49cc79e90">worldSizeWindow</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_simulation.html#a80fad3f57dfaf195a36f7bc49bc88279">   38</a></span>&#160;<a class="code" href="class_simulation.html#a80fad3f57dfaf195a36f7bc49bc88279">Simulation::~Simulation</a>()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">delete</span> this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">delete</span> this-&gt;<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">delete</span> <a class="code" href="class_simulation.html#afd31666b1d9a00c743c7d42813261436">data</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">delete</span>(<a class="code" href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">menu</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_simulation.html#a1544c6522a49da08bcd6dfcc0f18694d">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_simulation.html#a1544c6522a49da08bcd6dfcc0f18694d">Simulation::updateSFMLEvents</a>()</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_simulation.html#a313f35f6df5591ae8331d6d47f10d034">mouseViewPos</a> = (sf::Vector2i)(sf::Mouse::getPosition(*<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a>));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_simulation.html#a00741d76e1466a764a6ab7f86d66174c">mouseSimViewPos</a> = (sf::Vector2i)(sf::Mouse::getPosition(*<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">while</span> ( this-&gt;<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a>-&gt;pollEvent(this-&gt;sfEvent)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        || this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;pollEvent(this-&gt;<a class="code" href="class_simulation.html#adb94f6c5b3c0565f6747f15ee9319c3c">sfEvent</a>))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_simulation.html#adb94f6c5b3c0565f6747f15ee9319c3c">sfEvent</a>.type == sf::Event::Closed)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            this-&gt;<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a>-&gt;close();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;close();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_simulation.html#adb94f6c5b3c0565f6747f15ee9319c3c">sfEvent</a>.type == sf::Event::MouseButtonPressed &amp;&amp;(sf::Mouse::isButtonPressed(sf::Mouse::Left)))</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">menu</a>-&gt;<a class="code" href="class_menu.html#a3cd319037429d70d6d27f15281990742">isClicked</a>(<a class="code" href="class_simulation.html#a313f35f6df5591ae8331d6d47f10d034">mouseViewPos</a>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="class_simulation.html#aba48abef9dfb9ea53d97d827bd2676ba">world</a>-&gt;<a class="code" href="class_world.html#a3c04e73f1b72cd6a52f0e7bc4a417ea7">isClicked</a>(<a class="code" href="class_simulation.html#a00741d76e1466a764a6ab7f86d66174c">mouseSimViewPos</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_simulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_simulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c">Simulation::run</a>()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">while</span> (this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;isOpen())</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        this-&gt;<a class="code" href="class_simulation.html#a0883dec95f3f8bb4fcde84b74dc3da17">updateDt</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        this-&gt;<a class="code" href="class_simulation.html#a05f768b6836615170f1c43c6c0787fe8">update</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        this-&gt;<a class="code" href="class_simulation.html#a8c5bf1f730a45f399596c53582509260">render</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_simulation.html#a05f768b6836615170f1c43c6c0787fe8">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_simulation.html#a05f768b6836615170f1c43c6c0787fe8">Simulation::update</a>()</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#a1544c6522a49da08bcd6dfcc0f18694d">updateSFMLEvents</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">menu</a>-&gt;<a class="code" href="class_menu.html#a8446e8a1e56e9cf1db93790067510a61">update</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#aba48abef9dfb9ea53d97d827bd2676ba">world</a>-&gt;<a class="code" href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">update</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_simulation.html#a8c5bf1f730a45f399596c53582509260">   86</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_simulation.html#a8c5bf1f730a45f399596c53582509260">Simulation::render</a>()</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;clear();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a>-&gt;clear();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//window.draw(shape);</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">menu</a>-&gt;<a class="code" href="class_menu.html#a4fdbce7461df6b7454f4e4cc830d8165">drawMenu</a>(this-&gt;<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#aba48abef9dfb9ea53d97d827bd2676ba">world</a>-&gt;<a class="code" href="class_world.html#aa43282fd5ecd57a8292f06644e521b0c">drawWorld</a>(this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>,<a class="code" href="class_simulation.html#a0ee381efb3458d02bf78487cbb4dc42a">dt</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;display();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">optionWindow</a>-&gt;display();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_simulation.html#a0883dec95f3f8bb4fcde84b74dc3da17">   98</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_simulation.html#a0883dec95f3f8bb4fcde84b74dc3da17">Simulation::updateDt</a>()</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#a0ee381efb3458d02bf78487cbb4dc42a">dt</a> = this-&gt;<a class="code" href="class_simulation.html#a12cee0f0e14c624be5ba3c26b11d9929">dtClock</a>.restart().asSeconds();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">//system(&quot;cls&quot;);</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">//std::cout &lt;&lt; this-&gt;dt &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_simulation.html#a253f512a1f61acb40da5aed49cc79e90">  106</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_simulation.html#a253f512a1f61acb40da5aed49cc79e90">Simulation::worldSizeWindow</a>()</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a> = <span class="keyword">new</span> sf::RenderWindow(sf::VideoMode(<a class="code" href="_simulation_8h.html#a0e20eab8cadb22418ac3881efa4e4627">SIZE_WINDOW_X</a>, <a class="code" href="_simulation_8h.html#a094944ba5ab1b569375cd452a10b273b">SIZE_WINDOW_Y</a>), <span class="stringliteral">&quot;Symulacja Robaków&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">menu</a> = <span class="keyword">new</span> <a class="code" href="class_menu.html">Menu</a>(<a class="code" href="class_simulation.html#afd31666b1d9a00c743c7d42813261436">data</a>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//worldSize = new sf::Vector2i(10, 10);</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">while</span> (this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;isOpen())</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;clear();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="class_simulation.html#a00741d76e1466a764a6ab7f86d66174c">mouseSimViewPos</a> = (sf::Vector2i)(sf::Mouse::getPosition(*<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>));</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">while</span> (this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;pollEvent(this-&gt;sfEvent))</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_simulation.html#adb94f6c5b3c0565f6747f15ee9319c3c">sfEvent</a>.type == sf::Event::Closed)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;close();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                exit(0);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_simulation.html#adb94f6c5b3c0565f6747f15ee9319c3c">sfEvent</a>.type == sf::Event::MouseButtonPressed &amp;&amp; (sf::Mouse::isButtonPressed(sf::Mouse::Left)))</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">menu</a>-&gt;<a class="code" href="class_menu.html#aab18df08d41d9df88173301a509b535f">isClickedWorldSize</a>(<a class="code" href="class_simulation.html#a00741d76e1466a764a6ab7f86d66174c">mouseSimViewPos</a>, &amp;<a class="code" href="class_simulation.html#a1f28198b8a204cb4077479b6da0cdbf5">worldSize</a>))</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;close();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        this-&gt;<a class="code" href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">menu</a>-&gt;<a class="code" href="class_menu.html#a886128cc7c303c65fd3ce1277eb7c701">drawWorldSizeMenu</a>(this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>-&gt;display();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">delete</span> this-&gt;<a class="code" href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">window</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keyword">delete</span> this-&gt;<a class="code" href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">menu</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    this-&gt;<a class="code" href="class_simulation.html#a690e5f5473f9a6a43d163b0f77040bdb">initWindow</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<div class="ttc" id="a_simulation_8h_html"><div class="ttname"><a href="_simulation_8h.html">Simulation.h</a></div></div>
+<div class="ttc" id="a_simulation_8h_html_a094944ba5ab1b569375cd452a10b273b"><div class="ttname"><a href="_simulation_8h.html#a094944ba5ab1b569375cd452a10b273b">SIZE_WINDOW_Y</a></div><div class="ttdeci">#define SIZE_WINDOW_Y</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00010">Simulation.h:10</a></div></div>
+<div class="ttc" id="a_simulation_8h_html_a0e20eab8cadb22418ac3881efa4e4627"><div class="ttname"><a href="_simulation_8h.html#a0e20eab8cadb22418ac3881efa4e4627">SIZE_WINDOW_X</a></div><div class="ttdeci">#define SIZE_WINDOW_X</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00009">Simulation.h:9</a></div></div>
+<div class="ttc" id="a_simulation_8h_html_a3747a2e432fb3f538f2525b99597a13c"><div class="ttname"><a href="_simulation_8h.html#a3747a2e432fb3f538f2525b99597a13c">MENU_WINDOW_X</a></div><div class="ttdeci">#define MENU_WINDOW_X</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00007">Simulation.h:7</a></div></div>
+<div class="ttc" id="a_simulation_8h_html_a57ea41365f75d2a6533906b33c66e117"><div class="ttname"><a href="_simulation_8h.html#a57ea41365f75d2a6533906b33c66e117">MENU_WINDOW_Y</a></div><div class="ttdeci">#define MENU_WINDOW_Y</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00008">Simulation.h:8</a></div></div>
+<div class="ttc" id="a_simulation_8h_html_a5d81f924892356384391e89f82c1c460"><div class="ttname"><a href="_simulation_8h.html#a5d81f924892356384391e89f82c1c460">SIM_WINDOW_Y</a></div><div class="ttdeci">#define SIM_WINDOW_Y</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00006">Simulation.h:6</a></div></div>
+<div class="ttc" id="a_simulation_8h_html_a9de238be95ae60fb3c32c29fb9a596f9"><div class="ttname"><a href="_simulation_8h.html#a9de238be95ae60fb3c32c29fb9a596f9">SIM_WINDOW_X</a></div><div class="ttdeci">#define SIM_WINDOW_X</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00005">Simulation.h:5</a></div></div>
+<div class="ttc" id="aclass_menu_html"><div class="ttname"><a href="class_menu.html">Menu</a></div><div class="ttdef"><b>Definition:</b> <a href="_menu_8h_source.html#l00007">Menu.h:8</a></div></div>
+<div class="ttc" id="aclass_menu_html_a3cd319037429d70d6d27f15281990742"><div class="ttname"><a href="class_menu.html#a3cd319037429d70d6d27f15281990742">Menu::isClicked</a></div><div class="ttdeci">void isClicked(sf::Vector2i mousePos)</div><div class="ttdoc">funkcja sprawdza czy został kliknięty przycisk do zmiany wartości</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00332">Menu.cpp:332</a></div></div>
+<div class="ttc" id="aclass_menu_html_a4fdbce7461df6b7454f4e4cc830d8165"><div class="ttname"><a href="class_menu.html#a4fdbce7461df6b7454f4e4cc830d8165">Menu::drawMenu</a></div><div class="ttdeci">void drawMenu(sf::RenderWindow *window)</div><div class="ttdoc">funkcja rysuje przyciski na podanym oknie</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00319">Menu.cpp:319</a></div></div>
+<div class="ttc" id="aclass_menu_html_a8446e8a1e56e9cf1db93790067510a61"><div class="ttname"><a href="class_menu.html#a8446e8a1e56e9cf1db93790067510a61">Menu::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">aktualizuje wartości zmiennych w strukturze data gdzie przechowywane są aktualne wartości ustawionych...</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00261">Menu.cpp:261</a></div></div>
+<div class="ttc" id="aclass_menu_html_a886128cc7c303c65fd3ce1277eb7c701"><div class="ttname"><a href="class_menu.html#a886128cc7c303c65fd3ce1277eb7c701">Menu::drawWorldSizeMenu</a></div><div class="ttdeci">void drawWorldSizeMenu(sf::RenderWindow *window)</div><div class="ttdoc">funkca rysuje przyciski początkowe na podanym oknie</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00480">Menu.cpp:480</a></div></div>
+<div class="ttc" id="aclass_menu_html_aab18df08d41d9df88173301a509b535f"><div class="ttname"><a href="class_menu.html#aab18df08d41d9df88173301a509b535f">Menu::isClickedWorldSize</a></div><div class="ttdeci">bool isClickedWorldSize(sf::Vector2i mousePos, sf::Vector2i *worldSize)</div><div class="ttdoc">funkcja sprawdza czy został kliknięty przycisk na menu początkowym</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00448">Menu.cpp:448</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a00741d76e1466a764a6ab7f86d66174c"><div class="ttname"><a href="class_simulation.html#a00741d76e1466a764a6ab7f86d66174c">Simulation::mouseSimViewPos</a></div><div class="ttdeci">sf::Vector2i mouseSimViewPos</div><div class="ttdoc">pozycja myszki w oknie symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00029">Simulation.h:29</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a05f768b6836615170f1c43c6c0787fe8"><div class="ttname"><a href="class_simulation.html#a05f768b6836615170f1c43c6c0787fe8">Simulation::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">aktualizowanie ekranu</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8cpp_source.html#l00079">Simulation.cpp:79</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a0883dec95f3f8bb4fcde84b74dc3da17"><div class="ttname"><a href="class_simulation.html#a0883dec95f3f8bb4fcde84b74dc3da17">Simulation::updateDt</a></div><div class="ttdeci">void updateDt()</div><div class="ttdoc">aktualizuje zmienna dt o czas jaki jest potrzebny do wygenerowania klatki</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8cpp_source.html#l00098">Simulation.cpp:98</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a0a5c1f4b75c983565589c3e66f1ae59e"><div class="ttname"><a href="class_simulation.html#a0a5c1f4b75c983565589c3e66f1ae59e">Simulation::optionWindow</a></div><div class="ttdeci">sf::RenderWindow * optionWindow</div><div class="ttdoc">okno opcji</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00020">Simulation.h:20</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a0ee381efb3458d02bf78487cbb4dc42a"><div class="ttname"><a href="class_simulation.html#a0ee381efb3458d02bf78487cbb4dc42a">Simulation::dt</a></div><div class="ttdeci">float dt</div><div class="ttdoc">deltaTime</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00044">Simulation.h:44</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a12cee0f0e14c624be5ba3c26b11d9929"><div class="ttname"><a href="class_simulation.html#a12cee0f0e14c624be5ba3c26b11d9929">Simulation::dtClock</a></div><div class="ttdeci">sf::Clock dtClock</div><div class="ttdoc">zegar delta time</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00042">Simulation.h:42</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a1544c6522a49da08bcd6dfcc0f18694d"><div class="ttname"><a href="class_simulation.html#a1544c6522a49da08bcd6dfcc0f18694d">Simulation::updateSFMLEvents</a></div><div class="ttdeci">void updateSFMLEvents()</div><div class="ttdoc">aktualizowanie zdazen obsblugujacych grafike</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8cpp_source.html#l00047">Simulation.cpp:47</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a1f28198b8a204cb4077479b6da0cdbf5"><div class="ttname"><a href="class_simulation.html#a1f28198b8a204cb4077479b6da0cdbf5">Simulation::worldSize</a></div><div class="ttdeci">sf::Vector2i worldSize</div><div class="ttdoc">wielkość świata symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00032">Simulation.h:32</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a253f512a1f61acb40da5aed49cc79e90"><div class="ttname"><a href="class_simulation.html#a253f512a1f61acb40da5aed49cc79e90">Simulation::worldSizeWindow</a></div><div class="ttdeci">void worldSizeWindow()</div><div class="ttdoc">inicjowanie poierwszego okna symylacji do wyboru rozmiaru świata</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8cpp_source.html#l00106">Simulation.cpp:106</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a313f35f6df5591ae8331d6d47f10d034"><div class="ttname"><a href="class_simulation.html#a313f35f6df5591ae8331d6d47f10d034">Simulation::mouseViewPos</a></div><div class="ttdeci">sf::Vector2i mouseViewPos</div><div class="ttdoc">pozycja myszki na oknie opcji</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00027">Simulation.h:27</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a5b224cc5b36bcc8eb29689aff223de41"><div class="ttname"><a href="class_simulation.html#a5b224cc5b36bcc8eb29689aff223de41">Simulation::Simulation</a></div><div class="ttdeci">Simulation()</div><div class="ttdoc">wywołuje metode do inicjalizacji okien i świata</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8cpp_source.html#l00033">Simulation.cpp:33</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a64f8cce20978299d30489f957baaf4a3"><div class="ttname"><a href="class_simulation.html#a64f8cce20978299d30489f957baaf4a3">Simulation::view</a></div><div class="ttdeci">sf::View view</div><div class="ttdoc">widok okna symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00025">Simulation.h:25</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a690e5f5473f9a6a43d163b0f77040bdb"><div class="ttname"><a href="class_simulation.html#a690e5f5473f9a6a43d163b0f77040bdb">Simulation::initWindow</a></div><div class="ttdeci">void initWindow()</div><div class="ttdoc">tworzący okna świata i opcji, ładuje tez ikone, zmienne zmieniane z menu opcji oraz ustawia widok wyś...</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8cpp_source.html#l00004">Simulation.cpp:4</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a80fad3f57dfaf195a36f7bc49bc88279"><div class="ttname"><a href="class_simulation.html#a80fad3f57dfaf195a36f7bc49bc88279">Simulation::~Simulation</a></div><div class="ttdeci">virtual ~Simulation()</div><div class="ttdoc">zwalnia wskaźniki na oba okna symulacji oraz usuwa menu i zmienne zmieniane z tego menu</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8cpp_source.html#l00038">Simulation.cpp:38</a></div></div>
+<div class="ttc" id="aclass_simulation_html_a8c5bf1f730a45f399596c53582509260"><div class="ttname"><a href="class_simulation.html#a8c5bf1f730a45f399596c53582509260">Simulation::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">weswietlanie ekranu</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8cpp_source.html#l00086">Simulation.cpp:86</a></div></div>
+<div class="ttc" id="aclass_simulation_html_ab0decd0a558c27e12e6b8b85da5c80c4"><div class="ttname"><a href="class_simulation.html#ab0decd0a558c27e12e6b8b85da5c80c4">Simulation::window</a></div><div class="ttdeci">sf::RenderWindow * window</div><div class="ttdoc">okno symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00018">Simulation.h:18</a></div></div>
+<div class="ttc" id="aclass_simulation_html_aba48abef9dfb9ea53d97d827bd2676ba"><div class="ttname"><a href="class_simulation.html#aba48abef9dfb9ea53d97d827bd2676ba">Simulation::world</a></div><div class="ttdeci">World * world</div><div class="ttdoc">świat symulacji.</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00037">Simulation.h:37</a></div></div>
+<div class="ttc" id="aclass_simulation_html_adb94f6c5b3c0565f6747f15ee9319c3c"><div class="ttname"><a href="class_simulation.html#adb94f6c5b3c0565f6747f15ee9319c3c">Simulation::sfEvent</a></div><div class="ttdeci">sf::Event sfEvent</div><div class="ttdoc">fsml event</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00022">Simulation.h:22</a></div></div>
+<div class="ttc" id="aclass_simulation_html_ae5c367f87c0b5dc9740bc6d00e44e72c"><div class="ttname"><a href="class_simulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c">Simulation::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">uruchamianie programu</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8cpp_source.html#l00069">Simulation.cpp:69</a></div></div>
+<div class="ttc" id="aclass_simulation_html_af6651ca1f75f3f2cce9b44ac449c82e6"><div class="ttname"><a href="class_simulation.html#af6651ca1f75f3f2cce9b44ac449c82e6">Simulation::menu</a></div><div class="ttdeci">Menu * menu</div><div class="ttdoc">menu opcji</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00035">Simulation.h:35</a></div></div>
+<div class="ttc" id="aclass_simulation_html_afd31666b1d9a00c743c7d42813261436"><div class="ttname"><a href="class_simulation.html#afd31666b1d9a00c743c7d42813261436">Simulation::data</a></div><div class="ttdeci">variable * data</div><div class="ttdoc">zmienne odziałujące na symulacje na bierząco</div><div class="ttdef"><b>Definition:</b> <a href="_simulation_8h_source.html#l00039">Simulation.h:39</a></div></div>
+<div class="ttc" id="aclass_world_html"><div class="ttname"><a href="class_world.html">World</a></div><div class="ttdef"><b>Definition:</b> <a href="_world_8h_source.html#l00011">World.h:12</a></div></div>
+<div class="ttc" id="aclass_world_html_a3c04e73f1b72cd6a52f0e7bc4a417ea7"><div class="ttname"><a href="class_world.html#a3c04e73f1b72cd6a52f0e7bc4a417ea7">World::isClicked</a></div><div class="ttdeci">void isClicked(sf::Vector2i mousePos)</div><div class="ttdoc">sprawdza czy podana pozycja myszki zawiera sie w świecie symulacji</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00206">World.cpp:206</a></div></div>
+<div class="ttc" id="aclass_world_html_aa43282fd5ecd57a8292f06644e521b0c"><div class="ttname"><a href="class_world.html#aa43282fd5ecd57a8292f06644e521b0c">World::drawWorld</a></div><div class="ttdeci">void drawWorld(sf::RenderWindow *window, float dt)</div><div class="ttdoc">rysowanie swiata</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00171">World.cpp:171</a></div></div>
+<div class="ttc" id="aclass_world_html_aac8c1fde63c06577ffc648aaefdb37f0"><div class="ttname"><a href="class_world.html#aac8c1fde63c06577ffc648aaefdb37f0">World::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">aktualizuje stan swiata</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00093">World.cpp:93</a></div></div>
+<div class="ttc" id="astructvariable_html"><div class="ttname"><a href="structvariable.html">variable</a></div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00002">data.h:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_0aa469a7598a1e33e25a61cc13905763.html">HodowlaRobakow</a></li><li class="navelem"><a class="el" href="_simulation_8cpp.html">Simulation.cpp</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
+  </ul>
+</div>
+</body>
+</html>

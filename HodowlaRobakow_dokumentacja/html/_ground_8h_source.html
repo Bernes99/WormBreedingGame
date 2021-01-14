@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HodowlaRobaków - dokomentacja: Plik źródłowy HodowlaRobakow/Ground.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="worm.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">HodowlaRobaków - dokomentacja
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_ground_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Ground.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_ground_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="data_8h.html">data.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_ground.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground.html">Ground</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_ground.html#aa2b3f99bd36012552b9421175acebfc6">   10</a></span>&#160;    sf::RectangleShape <a class="code" href="class_ground.html#aa2b3f99bd36012552b9421175acebfc6">ground</a>; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_ground.html#af44f289c945fe5ccfc2598da46b9a3ef">   12</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_ground.html#af44f289c945fe5ccfc2598da46b9a3ef">maxFood</a>=100; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_ground.html#abe24cf4198c7054ab341b5faa2305d81">   14</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_ground.html#abe24cf4198c7054ab341b5faa2305d81">food</a>=<a class="code" href="class_ground.html#af44f289c945fe5ccfc2598da46b9a3ef">maxFood</a>; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_ground.html#a1ff853890e4f4c54f254a3aeb86f21ac">   17</a></span>&#160;    <a class="code" href="structvariable.html">variable</a> *<a class="code" href="class_ground.html#a1ff853890e4f4c54f254a3aeb86f21ac">data</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_ground.html#a052cbcff90e01a3000a3c68bc7c2e683">Ground</a>(<a class="code" href="structvariable.html">variable</a>* <a class="code" href="class_ground.html#a1ff853890e4f4c54f254a3aeb86f21ac">data</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ground.html#ac2522b4e5f4bbeac2801b4431c8ee0f7">setPosition</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    sf::RectangleShape <a class="code" href="class_ground.html#a668c214e535902f85a98a60b35d2c8a8">getGround</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_ground.html#aebf1764cd28a3a10f4fa520f9d645e52">eatFood</a>(<span class="keywordtype">int</span> wormFood);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ground.html#aeb60c3ec9dc84d46eea33661f5207390">restoreFood</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ground.html#ae88a0d961a0ed9c73bc579bfdb6cc5c0">updateValues</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="ttc" id="aclass_ground_html"><div class="ttname"><a href="class_ground.html">Ground</a></div><div class="ttdef"><b>Definition:</b> <a href="_ground_8h_source.html#l00006">Ground.h:7</a></div></div>
+<div class="ttc" id="aclass_ground_html_a052cbcff90e01a3000a3c68bc7c2e683"><div class="ttname"><a href="class_ground.html#a052cbcff90e01a3000a3c68bc7c2e683">Ground::Ground</a></div><div class="ttdeci">Ground(variable *data)</div><div class="ttdoc">konstruktor ground ustawiajacy kolor i rozmiar</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8cpp_source.html#l00003">Ground.cpp:3</a></div></div>
+<div class="ttc" id="aclass_ground_html_a1ff853890e4f4c54f254a3aeb86f21ac"><div class="ttname"><a href="class_ground.html#a1ff853890e4f4c54f254a3aeb86f21ac">Ground::data</a></div><div class="ttdeci">variable * data</div><div class="ttdoc">wskaźnik na zmienne odziałujące na symulacje na bierząco</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8h_source.html#l00017">Ground.h:17</a></div></div>
+<div class="ttc" id="aclass_ground_html_a668c214e535902f85a98a60b35d2c8a8"><div class="ttname"><a href="class_ground.html#a668c214e535902f85a98a60b35d2c8a8">Ground::getGround</a></div><div class="ttdeci">sf::RectangleShape getGround()</div><div class="ttdoc">zwraca kształt podłoza</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8cpp_source.html#l00019">Ground.cpp:19</a></div></div>
+<div class="ttc" id="aclass_ground_html_aa2b3f99bd36012552b9421175acebfc6"><div class="ttname"><a href="class_ground.html#aa2b3f99bd36012552b9421175acebfc6">Ground::ground</a></div><div class="ttdeci">sf::RectangleShape ground</div><div class="ttdoc">kształt podloza</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8h_source.html#l00010">Ground.h:10</a></div></div>
+<div class="ttc" id="aclass_ground_html_abe24cf4198c7054ab341b5faa2305d81"><div class="ttname"><a href="class_ground.html#abe24cf4198c7054ab341b5faa2305d81">Ground::food</a></div><div class="ttdeci">float food</div><div class="ttdoc">obecna ilosc jedzenia na podlozu</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8h_source.html#l00014">Ground.h:14</a></div></div>
+<div class="ttc" id="aclass_ground_html_ac2522b4e5f4bbeac2801b4431c8ee0f7"><div class="ttname"><a href="class_ground.html#ac2522b4e5f4bbeac2801b4431c8ee0f7">Ground::setPosition</a></div><div class="ttdeci">void setPosition(int x, int y)</div><div class="ttdoc">ustawia pozycje pojedynczego podłoza</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8cpp_source.html#l00014">Ground.cpp:14</a></div></div>
+<div class="ttc" id="aclass_ground_html_ae88a0d961a0ed9c73bc579bfdb6cc5c0"><div class="ttname"><a href="class_ground.html#ae88a0d961a0ed9c73bc579bfdb6cc5c0">Ground::updateValues</a></div><div class="ttdeci">void updateValues()</div><div class="ttdoc">aktualizuje zmienne odziałujące na symulacje na bierząco</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8cpp_source.html#l00077">Ground.cpp:77</a></div></div>
+<div class="ttc" id="aclass_ground_html_aeb60c3ec9dc84d46eea33661f5207390"><div class="ttname"><a href="class_ground.html#aeb60c3ec9dc84d46eea33661f5207390">Ground::restoreFood</a></div><div class="ttdeci">void restoreFood()</div><div class="ttdoc">przywraca ilosc zywnosci na podlozu</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8cpp_source.html#l00055">Ground.cpp:55</a></div></div>
+<div class="ttc" id="aclass_ground_html_aebf1764cd28a3a10f4fa520f9d645e52"><div class="ttname"><a href="class_ground.html#aebf1764cd28a3a10f4fa520f9d645e52">Ground::eatFood</a></div><div class="ttdeci">bool eatFood(int wormFood)</div><div class="ttdoc">odejmuje ilość zywanosci na podlozu</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8cpp_source.html#l00024">Ground.cpp:24</a></div></div>
+<div class="ttc" id="aclass_ground_html_af44f289c945fe5ccfc2598da46b9a3ef"><div class="ttname"><a href="class_ground.html#af44f289c945fe5ccfc2598da46b9a3ef">Ground::maxFood</a></div><div class="ttdeci">float maxFood</div><div class="ttdoc">max ilosc jedzenia na podlozu</div><div class="ttdef"><b>Definition:</b> <a href="_ground_8h_source.html#l00012">Ground.h:12</a></div></div>
+<div class="ttc" id="adata_8h_html"><div class="ttname"><a href="data_8h.html">data.h</a></div></div>
+<div class="ttc" id="astructvariable_html"><div class="ttname"><a href="structvariable.html">variable</a></div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00002">data.h:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_0aa469a7598a1e33e25a61cc13905763.html">HodowlaRobakow</a></li><li class="navelem"><a class="el" href="_ground_8h.html">Ground.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
+  </ul>
+</div>
+</body>
+</html>
